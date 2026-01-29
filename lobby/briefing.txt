@@ -1,0 +1,14 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              THE ROOMS CHALLENGE - MISSION BRIEFING                        ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Bienvenue dans "Operation Rabbit Hole" !
+
+Vous êtes sur le GATEWAY, le point d'entrée de cette infrastructure sécurisée.
+Votre mission consiste à progresser à travers 10 niveaux de difficulté
+croissante, en utilisant vos compétences en administration système et en
+cybersécurité.
+
+
