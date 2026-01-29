@@ -1,0 +1,7 @@
+================================================================================================
+You're standing at the entrance of Level 01.
+
+Find a way to proceed deeper...
+
+Hint: take a look at the briefing document located at /docs/briefing.txt
+================================================================================================

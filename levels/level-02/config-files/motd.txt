@@ -1,0 +1,8 @@
+================================================================================================
+Congratulations on reaching Level 2!
+FLAG: FLAG{keys_are_better_than_passwords}
+
+Find a way to proceed deeper...
+
+Hint: take a look at the briefing document located at /docs/briefing.txt
+================================================================================================
