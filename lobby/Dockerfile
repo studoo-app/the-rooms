@@ -1,8 +1,8 @@
 FROM debian:12
 
-# Get the username from build arguments
+# Get the username and password from build arguments
 ARG USER
-
+ARG PASS
 # Update package lists and install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \
@@ -17,10 +17,9 @@ COPY lobby/motd.txt /etc/motd
 # Create directory for SSH daemon
 RUN mkdir /var/run/sshd
 
-# Create the user and set password (default: password)
-# TODO : [Lobby] change default password
+# Create the user and set password
 RUN useradd -m -s /bin/bash $USER
-RUN echo "$USER:password" | chpasswd
+RUN echo "$USER:$PASS" | chpasswd
 RUN usermod -aG sudo $USER
 
 # Set working directory to the user's home
