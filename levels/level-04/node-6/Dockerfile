@@ -13,15 +13,15 @@ RUN apt-get update && apt-get install -y \
     nmap \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy motd file
-#COPY levels/level-04/node-0/config-files/motd.txt /etc/motd
+# Copy motd file TODO: provide motd file for node 4-6
+#COPY levels/level-04/node-6/config-files/motd.txt /etc/motd
 
 
 # Create directory for SSH daemon
 RUN mkdir /var/run/sshd
 
 # Copy custom sshd_config
-#COPY levels/level-03/level-files/sshd_config /etc/ssh/sshd_config
+COPY levels/level-04/node-6/sshd_config /etc/ssh/sshd_config
 
 # Create the user and set password
 RUN useradd -m -s /bin/bash $USER
