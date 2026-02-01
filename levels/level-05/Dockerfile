@@ -47,7 +47,7 @@ RUN exiftool -overwrite_original \
   -DateTimeOriginal="2019:04:15 14:32:05" \
   -GPSLatitude=35.689339 -GPSLatitudeRef=N \
   -GPSLongitude=139.692083 -GPSLongitudeRef=E \
-  photo_vacances_023.jpg
+  docs/employees/alice_martin/photo_vacances_023.jpg
 
 # Expose SSH port
 EXPOSE 22

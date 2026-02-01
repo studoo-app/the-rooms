@@ -6,7 +6,7 @@ services:
       dockerfile: lobby/Dockerfile
       args:
         USER: newbie
-        PASS: password
+        PASS: Welcome@TheRooms
     ports:
       - "2200:22"
     networks:
@@ -22,7 +22,7 @@ services:
       dockerfile: levels/level-01/Dockerfile
       args:
         USER: lvl01
-        PASS: pass # TODO: change password in compose for level 1
+        PASS: starting_jouney
     networks:
         nt-rooms-lvl-01:
             ipv4_address: 10.100.1.2
@@ -36,7 +36,7 @@ services:
       dockerfile: levels/level-02/Dockerfile
       args:
         USER: lvl02
-        PASS: pass # TODO: change password in compose for level 2
+        PASS: LQU8PvANkAuYitkQ
     networks:
       nt-rooms-lvl-02:
         ipv4_address: 10.100.2.2
@@ -142,7 +142,7 @@ services:
       nt-rooms-lvl-04:
         ipv4_address: 10.100.4.8
       nt-rooms-lvl-05:
-        ipv4_address: 10.100.5.13
+        ipv4_address: 10.100.5.5
 
   level-05:
     container_name: nt-rooms-lvl05
@@ -198,5 +198,5 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.100.4.0/29
+        - subnet: 10.100.5.0/29
           gateway: 10.100.5.1
