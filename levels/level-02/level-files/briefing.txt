@@ -1,14 +1,22 @@
-╔════════════════════════════════════════════════════════════════════════════╗
-║                                                                            ║
-║              THE ROOMS CHALLENGE - ROOM 2 - MISSION BRIEFING               ║
-║                                                                            ║
-╚════════════════════════════════════════════════════════════════════════════╝
+═══════════════════════════════════════════════
+        THE ROOMS  —  NIVEAU 2
+        The Iron Lock
+═══════════════════════════════════════════════
 
-Bienvenue dans "Operation Rabbit Hole" !
+MISSION
 
-Vous êtes sur le GATEWAY, le point d'entrée de cette infrastructure sécurisée.
-Votre mission consiste à progresser à travers 10 niveaux de difficulté
-croissante, en utilisant vos compétences en administration système et en
-cybersécurité.
+  Une porte. Verrouillée. Pas de mot de passe.
+  Juste une serrure qui n'accepte qu'une seule
+  chose : la bonne clé.
 
+OBJECTIF
 
+  Vous authentifier en SSH sur la machine cible
+  en utilisant une clé privée.
+
+RAPPEL
+
+  Une clé ne se génère pas par magie.
+  Elle existe déjà quelque part.
+
+═══════════════════════════════════════════════

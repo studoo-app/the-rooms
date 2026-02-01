@@ -1,14 +1,26 @@
-╔════════════════════════════════════════════════════════════════════════════╗
-║                                                                            ║
-║              THE ROOMS CHALLENGE - ROOM 2 - MISSION BRIEFING               ║
-║                                                                            ║
-╚════════════════════════════════════════════════════════════════════════════╝
+═══════════════════════════════════════════════
+        THE ROOMS  —  NIVEAU 5
+        The Puppet Master
+═══════════════════════════════════════════════
 
-Bienvenue dans "Operation Rabbit Hole" !
+MISSION
 
-Vous êtes sur le GATEWAY, le point d'entrée de cette infrastructure sécurisée.
-Votre mission consiste à progresser à travers 10 niveaux de difficulté
-croissante, en utilisant vos compétences en administration système et en
-cybersécurité.
+  Cette pièce n'appartient pas à vous.
+  Elle appartient à quelqu'un d'autre.
+  Quelqu'un qui parle, qui réagit, qui
+  a des habitudes. Et des secrets.
 
+OBJECTIF
 
+  Exploiter les informations disponibles par
+  social engineering pour identifier et cracker
+  un mot de passe. Cette pièce est la dernière.
+  Vous êtes à deux pas de la sortie.
+
+RAPPEL
+
+  Les mots de passe les plus sécurisés
+  tombent devant celui qui sait bien
+  écouter.
+
+═══════════════════════════════════════════════

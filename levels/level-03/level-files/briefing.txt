@@ -1,14 +1,24 @@
-╔════════════════════════════════════════════════════════════════════════════╗
-║                                                                            ║
-║              THE ROOMS CHALLENGE - ROOM 3 - MISSION BRIEFING               ║
-║                                                                            ║
-╚════════════════════════════════════════════════════════════════════════════╝
+═══════════════════════════════════════════════
+        THE ROOMS  —  NIVEAU 3
+        The Cipher Chamber
+═══════════════════════════════════════════════
 
-Bienvenue dans "Operation Rabbit Hole" !
+MISSION
 
-Vous êtes sur le GATEWAY, le point d'entrée de cette infrastructure sécurisée.
-Votre mission consiste à progresser à travers 10 niveaux de difficulté
-croissante, en utilisant vos compétences en administration système et en
-cybersécurité.
+  Les murs parlent. Mais personne ne comprend.
+  Les messages sont là, écris en pleine vue,
+  mais leur sens est verrouillé derrière un
+  ou plusieurs chiffrements.
 
+OBJECTIF
 
+  Identifier le(s) type(s) de chiffrement utilisé
+  et décoder tous les messages cachés dans cette
+  pièce.
+
+RAPPEL
+
+  Avant de décoder, il faut reconnaître.
+  Les chiffrements sont pas tous pareils.
+
+═══════════════════════════════════════════════
