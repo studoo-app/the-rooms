@@ -1,0 +1,8 @@
+================================================================================================
+Congratulations on reaching Level 5!
+FLAG: FLAG{Going_through_the_maze!}
+
+Find a way to proceed deeper...
+
+Hint: take a look at the briefing document located at /docs/briefing.txt
+================================================================================================

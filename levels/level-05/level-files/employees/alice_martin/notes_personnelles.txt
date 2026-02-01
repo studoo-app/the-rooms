@@ -1,0 +1,41 @@
+╔══════════════════════════════════════════════════════════════════╗
+║        📝  NOTES PERSONNELLES — Alice Martin                    ║
+║        Fichier privé — À NE PAS partager !!!                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+--- 15/12/2024 ---
+Renouvellement du mot de passe entreprise en janvier.
+La politique dit : min 12 chars, 1 majuscule, 1 chiffre, 1 symbole.
+Pattern conseillé par la sécurité : Lieu+Année+Symbole
+→ Mon mot de passe actuel expire le 15 janvier, à ne pas oublier !!
+
+--- 02/01/2025 ---
+Codes & mots de passe (PERSO) :
+  • WiFi maison       → Paris2019!
+  • Netflix           → Charlie&Alice2023  (à changer, trop long)
+  • Amazon            → [à retrouver… dans mon gestionnaire ?]
+  • Compte courant    → [code à 4 chiffres seulement, pas sécurisé]
+
+--- 10/01/2025 ---
+📅 Dates importantes :
+  • Maman (Françoise)  → anniversaire 23/05
+  • Papa (Pierre)      → anniversaire 17/09
+  • Mariage            → 07/09/2018
+  • Charlie            → né en 2020
+  • Emma               → née en 2022
+  • Whiskers (chat)    → chez nous depuis 2017
+
+--- 20/11/2024 ---
+Photos du voyage Japon à imprimer pour l'album familial !
+Le fichier photo_vacances.jpg est vraiment réussi, mais à recadrer.
+Tokyo était vraiment magique en avril… un jour on retournera.
+
+--- 05/12/2024 ---
+Charlie Leroy commence lundi comme dév junior.
+Bob me demande de le former sur nos outils.
+Il revient de son stage à Berlin, l'air assez motivé.
+
+--- 28/12/2024 ---
+Recheck : les photos du voyage sont bien dans le dossier
+personnel/employees/alice_martin/ sur le serveur.
+Dont photo_vacances.jpg (avril 2019, Japan trip).

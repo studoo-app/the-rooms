@@ -141,6 +141,20 @@ services:
     networks:
       nt-rooms-lvl-04:
         ipv4_address: 10.100.4.8
+      nt-rooms-lvl-05:
+        ipv4_address: 10.100.5.13
+
+  level-05:
+    container_name: nt-rooms-lvl05
+    build:
+      context: .
+      dockerfile: levels/level-05/Dockerfile
+      args:
+        USER: lvl05
+        PASS: pass # TODO: change password in compose for level 5
+    networks:
+      nt-rooms-lvl-05:
+        ipv4_address: 10.100.5.2
 
 
 ################################################
@@ -179,3 +193,10 @@ networks:
       config:
         - subnet: 10.100.4.0/28
           gateway: 10.100.4.1
+
+  nt-rooms-lvl-05:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.4.0/29
+          gateway: 10.100.5.1

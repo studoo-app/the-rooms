@@ -4,12 +4,12 @@
 
 ## Description
 Bienvenue dans "The Rooms", un labyrinthe virtuel conçu pour tester et améliorer vos compétences en cybersécurité. 
-Chaque salle de ce labyrinthe représente un défi unique, nécessitant l'application de diverses techniques de hacking éthique
-pour progresser.
+Chaque niveau nécessite l'application de diverses techniques et compétences en cybersécurité ou informatique
+pour déverouiller et accéder au niveau suivant.
 
 ## Objectifs Pédagogiques
 
-- Maîtriser les techniques SSH avancées (ProxyJump, tunneling, port forwarding)
+- Maîtriser les techniques SSH 
 - Développer des compétences en reconnaissance réseau
 - Pratiquer la cryptographie appliquée
 - Comprendre le social engineering
@@ -22,7 +22,7 @@ pour progresser.
 | Niveau | Objectif | Compétences développées |
 |--------|--|--------|
 | Niveau 1 | savoir explorer et détecter les dosseirs cachés | Exploration systèmes Linux |
-| Niveau 2 | Localiser et spécifier une clé ssh pour se connecter | ssh avancé |
+| Niveau 2 | Authentification SSH par clé privée | ssh avancé |
 | Niveau 3 | Détecter le / les cryptages utilisés et décoder des messages | Cryptographie |
 | Niveau 4 | Naviguer dans le labyrinthe et trouver la sortie | Exploration réseau et retro engineering de configuration SSH |
 | Niveau 5 | Utiliser le social engineering pour obtenir des informations et cracker un mot de passe | Social engineering |
