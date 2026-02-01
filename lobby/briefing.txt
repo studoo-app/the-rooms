@@ -4,11 +4,19 @@
 ║                                                                            ║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
-Bienvenue dans "Operation Rabbit Hole" !
+Bienvenue dans "The Rooms" !
 
-Vous êtes sur le GATEWAY, le point d'entrée de cette infrastructure sécurisée.
+Vous venez d'entrer dans le Lobby, le point d'entrée de cette infrastructure sécurisée.
 Votre mission consiste à progresser à travers 10 niveaux de difficulté
-croissante, en utilisant vos compétences en administration système et en
+croissante, en utilisant vos compétences en administration système, en développement et en
 cybersécurité.
 
+La progression se fait en accédant à chaque niveau successif, vous récupérerez des Flags
+(chaînes de caractères uniques) qui prouvent votre réussite.
+
+Pour commencer votre aventure, connecter au niveau 1 en utilisant les informations
+d'identification suivantes :
+
+  • Nom d'utilisateur : lvl01
+  • Mot de passe      : starting_jouney!
 

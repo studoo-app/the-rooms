@@ -1,14 +1,22 @@
-╔════════════════════════════════════════════════════════════════════════════╗
-║                                                                            ║
-║              THE ROOMS CHALLENGE - ROOM 1 - MISSION BRIEFING               ║
-║                                                                            ║
-╚════════════════════════════════════════════════════════════════════════════╝
+═══════════════════════════════════════════════
+        THE ROOMS  —  NIVEAU 1
+        The Shadow Vault
+═══════════════════════════════════════════════
 
-Bienvenue dans "Operation Rabbit Hole" !
+MISSION
 
-Vous êtes sur le GATEWAY, le point d'entrée de cette infrastructure sécurisée.
-Votre mission consiste à progresser à travers 10 niveaux de difficulté
-croissante, en utilisant vos compétences en administration système et en
-cybersécurité.
+  Des credentials sont dissimulés quelque part
+  dans cette machine. Ils ne se montrent pas.
+  Ils se trouvent.
 
+OBJECTIF
 
+  Localiser tous les fichiers contenant des
+  credentials cachés sur le système.
+
+RAPPEL
+
+  Ce qui n'est pas visible n'est pas forcément
+  absent.
+
+═══════════════════════════════════════════════
