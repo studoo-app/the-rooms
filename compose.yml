@@ -64,11 +64,10 @@ services:
       dockerfile: levels/level-04/node-0/Dockerfile
       args:
         USER: lvl04
-        PASS: pass # TODO: change password in compose for level 4
+        PASS: 4IqOygbPL5dcFYPT
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.2
-
+        ipv4_address: 10.100.4.17
 
   level-04-node-01:
     container_name: nt-rooms-lvl04-node-1
@@ -77,10 +76,10 @@ services:
       dockerfile: levels/level-04/node-1/Dockerfile
       args:
         USER: lvl04-node-01
-        PASS: pass # TODO: change password in compose for level 4-1
+        PASS: oamgPLpLCm7J
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.3
+        ipv4_address: 10.100.4.23
 
   level-04-node-02:
     container_name: nt-rooms-lvl04-node-2
@@ -89,10 +88,10 @@ services:
       dockerfile: levels/level-04/node-2/Dockerfile
       args:
         USER: lvl04-node-02
-        PASS: pass # TODO: change password in compose for level 4-2
+        PASS: fCq7pAMedfs5
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.4
+        ipv4_address: 10.100.4.16
 
   level-04-node-03:
     container_name: nt-rooms-lvl04-node-3
@@ -101,10 +100,10 @@ services:
       dockerfile: levels/level-04/node-3/Dockerfile
       args:
         USER: lvl04-node-03
-        PASS: pass # TODO: change password in compose for level 4-3
+        PASS: 8zVlPa95ujNx
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.5
+        ipv4_address: 10.100.4.31
 
   level-04-node-04:
     container_name: nt-rooms-lvl04-node-4
@@ -113,10 +112,10 @@ services:
       dockerfile: levels/level-04/node-4/Dockerfile
       args:
         USER: lvl04-node-04
-        PASS: pass # TODO: change password in compose for level 4-4
+        PASS: xMeS1ZB7Zymt
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.6
+        ipv4_address: 10.100.4.21
 
   level-04-node-05:
     container_name: nt-rooms-lvl04-node-5
@@ -125,10 +124,10 @@ services:
       dockerfile: levels/level-04/node-5/Dockerfile
       args:
         USER: lvl04-node-05
-        PASS: pass # TODO: change password in compose for level 4-5
+        PASS: qNaaGZhM6mZ0
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.7
+        ipv4_address: 10.100.4.37
 
   level-04-node-06:
     container_name: nt-rooms-lvl04-node-6
@@ -137,10 +136,10 @@ services:
       dockerfile: levels/level-04/node-6/Dockerfile
       args:
         USER: lvl04-node-06
-        PASS: pass # TODO: change password in compose for level 4-6
+        PASS: ijL73e5eHxvh
     networks:
       nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.8
+        ipv4_address: 10.100.4.42
       nt-rooms-lvl-05:
         ipv4_address: 10.100.5.5
 
@@ -151,7 +150,7 @@ services:
       dockerfile: levels/level-05/Dockerfile
       args:
         USER: lvl05
-        PASS: pass # TODO: change password in compose for level 5
+        PASS: fwVYIhgpePLO9Y1t
     networks:
       nt-rooms-lvl-05:
         ipv4_address: 10.100.5.2
@@ -191,7 +190,7 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.100.4.0/28
+        - subnet: 10.100.4.0/26
           gateway: 10.100.4.1
 
   nt-rooms-lvl-05:

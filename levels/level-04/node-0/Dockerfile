@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy motd file
-#COPY levels/level-04/node-0/config-files/motd.txt /etc/motd
+COPY levels/level-04/node-0/config-files/motd.txt /etc/motd
 
 
 # Create directory for SSH daemon
@@ -30,6 +30,10 @@ RUN usermod -aG sudo $USER
 
 # Set working directory to the user's home
 WORKDIR /home/$USER
+
+# Create challenge directories# Copy the briefing file into the user's home directory
+RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
+COPY levels/level-04/level-files/briefing.txt docs/briefing.txt
 
 # Expose SSH port
 EXPOSE 22

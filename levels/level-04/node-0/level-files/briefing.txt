@@ -1,6 +1,6 @@
 ═══════════════════════════════════════════════
         THE ROOMS  —  NIVEAU 4
-        The Maze
+                The Maze
 ═══════════════════════════════════════════════
 
 MISSION
@@ -20,5 +20,7 @@ RAPPEL
   Un labyrinthe n'a qu'une sortie.
   Mais il peut avoir plusieurs façons
   de vous faire tourner en rond.
+
+  Les premiers sauront vous guider
 
 ═══════════════════════════════════════════════
