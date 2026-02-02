@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /var/run/sshd
 
 # Copy custom sshd_config
-COPY levels/level-04/node-2/sshd_config /etc/ssh/sshd_config
+COPY levels/level-04/node-2/config-files/sshd_config /etc/ssh/sshd_config
 
 # Create the user and set password
 RUN useradd -m -s /bin/bash $USER
