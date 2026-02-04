@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     openssh-server \
     nmap \
+    hashcat \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy motd file TODO: provide motd file for node 4-6
@@ -30,6 +31,11 @@ RUN usermod -aG sudo $USER
 
 # Set working directory to the user's home
 WORKDIR /home/$USER
+
+# Create challenge directories
+# Copy the files into the user's home directory
+RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
+COPY levels/level-04/node-6/level-files/next-password.txt docs/next-password.txt
 
 # Expose SSH port
 EXPOSE 22

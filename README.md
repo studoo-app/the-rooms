@@ -20,9 +20,14 @@ pour déverouiller et accéder au niveau suivant.
 ## Description des niveaux
 
 | Niveau | Objectif | Compétences développées |
-|--------|--|--------|
+|--------|--|--|
 | Niveau 1 | savoir explorer et détecter les dosseirs cachés | Exploration systèmes Linux |
 | Niveau 2 | Authentification SSH par clé privée | ssh avancé |
 | Niveau 3 | Détecter le / les cryptages utilisés et décoder des messages | Cryptographie |
 | Niveau 4 | Naviguer dans le labyrinthe et trouver la sortie | Exploration réseau et retro engineering de configuration SSH |
 | Niveau 5 | Utiliser le social engineering pour obtenir des informations et cracker un mot de passe | Social engineering |
+| Niveau 6 | Trouver la bonne séquence | Port knocking |
+| Niveau 7 | Attaquer la base de données d'un site web | Injection sql |
+| Niveau 8 | Fragment Hunt | Exploration réseau, cryptographie |
+| Niveau 9 | Changement de port et clés publiques | Ssh, reconnaissance réseau  |
+| Niveau 10 | Facing the Dragon |  |
