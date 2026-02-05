@@ -1,0 +1,8 @@
+================================================================================================
+Congratulations on reaching Level 8!
+FLAG: FLAG{The_great_injector}
+
+Find a way to proceed deeper...
+
+Hint: take a look at the briefing document located at /docs/briefing.txt
+================================================================================================

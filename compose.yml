@@ -184,18 +184,116 @@ services:
     networks:
       nt-rooms-lvl-07:
         ipv4_address: 10.100.7.2
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.7
 
   level-07-webserver:
     container_name: nt-rooms-lvl07-webserver
     build:
       context: .
       dockerfile: levels/level-07-webserver/Dockerfile
+    volumes:
+      - ./levels/level-07-webserver/app:/app
+    ports:
+      - "8001:80"
+    environment:
+      - SERVER_NAME=:80
+      - APP_ENV=dev
     networks:
         nt-rooms-lvl-07:
             ipv4_address: 10.100.7.3
 
+  level-07-dbserver:
+    container_name:  nt-rooms-lvl07-dbserver
+    image: mariadb:11
+#    ports:
+#      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: app_db
+      MYSQL_ROOT_PASSWORD: studoo
+      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      #MYSQL_USER: app_db_user
+      #MYSQL_PASSWORD: app_db_password
+    volumes:
+      - ./levels/level-07-dbserver/var/dbdata:/var/lib/mysql
+      - ./levels/level-07-dbserver/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  level-08:
+    container_name: nt-rooms-lvl08
+    build:
+      context: .
+      dockerfile: levels/level-08/Dockerfile
+      args:
+        USER: lvl08
+        PASS: 8zVlPa95ujNx
+    networks:
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.2
+      nt-rooms-lvl-09:
+        ipv4_address: 10.100.9.5
 
+  level-08-fragment-01:
+    container_name: nt-rooms-lvl08-fragment-01
+    build:
+      context: .
+      dockerfile: levels/level-08-fragment-01/Dockerfile
+      args:
+        USER: prima-custodia
+        PASS: Primum-Fragmentum
+    networks:
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.3
+
+  level-08-fragment-02:
+    container_name: nt-rooms-lvl08-fragment-02
+    build:
+      context: .
+      dockerfile: levels/level-08-fragment-02/Dockerfile
+      args:
+        USER: secundo-custodiae
+        PASS: Secundum-Fragmentum
+    networks:
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.4
+
+  level-08-fragment-03:
+    container_name: nt-rooms-lvl08-fragment-03
+    build:
+      context: .
+      dockerfile: levels/level-08-fragment-03/Dockerfile
+      args:
+        USER: tertia-custodia
+        PASS: Tertium-Fragmentum
+    networks:
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.5
+
+  level-08-fragment-04:
+    container_name: nt-rooms-lvl08-fragment-04
+    build:
+      context: .
+      dockerfile: levels/level-08-fragment-04/Dockerfile
+      args:
+        USER: quarta-custodia
+        PASS: Quartum-Fragmentum
+    networks:
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.6
+
+  level-09:
+    container_name: nt-rooms-lvl09
+    build:
+      context: .
+      dockerfile: levels/level-09/Dockerfile
+      args:
+        USER: lvl-09
+        PASS: Audivi-Veni-Ascendi-Vici
+    networks:
+      nt-rooms-lvl-09:
+        ipv4_address: 10.100.9.2
+      nt-rooms-lvl-08:
+        ipv4_address: 10.100.8.13
 
 ################################################
 networks:
@@ -254,3 +352,17 @@ networks:
       config:
         - subnet: 10.100.7.0/29
           gateway: 10.100.7.1
+
+  nt-rooms-lvl-08:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.8.0/26
+          gateway: 10.100.8.1
+
+  nt-rooms-lvl-09:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.9.0/29
+          gateway: 10.100.9.1
