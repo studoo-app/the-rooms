@@ -11,8 +11,9 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     openssh-server \
     nmap \
-    john \
+    hashcat \
     exiftool \
+
     && rm -rf /var/lib/apt/lists/*
 
 # Copy motd file

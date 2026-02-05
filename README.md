@@ -28,6 +28,5 @@ pour déverouiller et accéder au niveau suivant.
 | Niveau 5 | Utiliser le social engineering pour obtenir des informations et cracker un mot de passe | Social engineering |
 | Niveau 6 | Trouver la bonne séquence | Port knocking |
 | Niveau 7 | Attaquer la base de données d'un site web | Injection sql |
-| Niveau 8 | Fragment Hunt | Exploration réseau, cryptographie |
-| Niveau 9 | Changement de port et clés publiques | Ssh, reconnaissance réseau  |
-| Niveau 10 | Facing the Dragon |  |
+| Niveau 8 | Fragment Hunt | Exploration réseau, cryptographie, changement de port, port knocking, social engineering|
+| Niveau 9 | The End | Plage, soleil et noix de coco |

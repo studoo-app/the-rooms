@@ -1,0 +1,8 @@
+================================================================================================
+Congratulations on reaching Level 6!
+FLAG: FLAG{All_right_Sherlock}
+
+Find a way to proceed deeper...
+
+Hint: take a look at the briefing document located at /docs/briefing.txt
+================================================================================================

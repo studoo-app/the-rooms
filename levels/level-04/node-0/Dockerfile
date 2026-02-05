@@ -34,7 +34,7 @@ WORKDIR /home/$USER
 # Create challenge directories# Copy the briefing file into the user's home directory
 RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
 COPY levels/level-04/node-0/level-files/briefing.txt docs/briefing.txt
-COPY levels/level-04/node-0/level-files/access.txt docs/access.txt
+COPY levels/level-04/node-0/level-files/acces-ssh.txt docs/acces-ssh.txt
 
 # Expose SSH port
 EXPOSE 22

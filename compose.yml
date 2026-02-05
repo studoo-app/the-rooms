@@ -154,6 +154,47 @@ services:
     networks:
       nt-rooms-lvl-05:
         ipv4_address: 10.100.5.2
+      nt-rooms-lvl-06:
+        ipv4_address: 10.100.6.5
+
+  level-06:
+    container_name: nt-rooms-lvl06
+    build:
+      context: .
+      dockerfile: levels/level-06/Dockerfile
+      args:
+        USER: lvl06
+        PASS: Tokyo2019!
+    networks:
+      nt-rooms-lvl-06:
+        ipv4_address: 10.100.6.2
+      nt-rooms-lvl-07:
+        ipv4_address: 10.100.7.5
+
+  level-07:
+    container_name: nt-rooms-lvl07
+    build:
+      context: .
+      dockerfile: levels/level-07/Dockerfile
+      args:
+        USER: lvl07
+        PASS: NzjDHpnK28psXCFJ
+    cap_add:
+      - NET_ADMIN
+    networks:
+      nt-rooms-lvl-07:
+        ipv4_address: 10.100.7.2
+
+  level-07-webserver:
+    container_name: nt-rooms-lvl07-webserver
+    build:
+      context: .
+      dockerfile: levels/level-07-webserver/Dockerfile
+    networks:
+        nt-rooms-lvl-07:
+            ipv4_address: 10.100.7.3
+
+
 
 
 ################################################
@@ -199,3 +240,17 @@ networks:
       config:
         - subnet: 10.100.5.0/29
           gateway: 10.100.5.1
+
+  nt-rooms-lvl-06:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.6.0/29
+          gateway: 10.100.6.1
+
+  nt-rooms-lvl-07:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.7.0/29
+          gateway: 10.100.7.1
