@@ -2,6 +2,8 @@
 # Hackathon 2026 - The Rooms
 [![Version](https://img.shields.io/badge/Version-2026-blue)]()
 
+![wallapper](docs/images/wallpaper-1.jpg)
+
 ## Description
 Bienvenue dans "The Rooms", un labyrinthe virtuel conçu pour tester et améliorer vos compétences en cybersécurité. 
 Chaque niveau nécessite l'application de diverses techniques et compétences en cybersécurité ou informatique
