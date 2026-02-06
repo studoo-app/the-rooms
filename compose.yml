@@ -218,6 +218,9 @@ services:
     volumes:
       - ./levels/level-07-dbserver/var/dbdata:/var/lib/mysql
       - ./levels/level-07-dbserver/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+        nt-rooms-lvl-07:
+            ipv4_address: 10.100.7.4
 
   level-08:
     container_name: nt-rooms-lvl08
