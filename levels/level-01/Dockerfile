@@ -40,7 +40,7 @@ COPY levels/level-01/level-files/briefing.txt docs/briefing.txt
 #COPY level-files/level2_access.txt .secrets/.hidden/level2_access.txt
 
 COPY levels/level-01/level-files/backup_credentials.txt .secrets/backup_credentials.txt
-COPY levels/level-01/level-files/level2_access.txt .secrets/.hidden/level2_access.txt
+COPY levels/level-01/level-files/level2_access.txt .secrets/.hidden/key.txt
 
 # Expose SSH port
 EXPOSE 22

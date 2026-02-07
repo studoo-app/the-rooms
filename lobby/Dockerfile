@@ -25,8 +25,11 @@ RUN usermod -aG sudo $USER
 # Set working directory to the user's home
 WORKDIR /home/$USER
 
+RUN mkdir resources
+
 # Copy the briefing file into the user's home directory
 COPY lobby/briefing.txt briefing.txt
+COPY /docs/resources resources
 
 # Expose SSH port
 EXPOSE 22
