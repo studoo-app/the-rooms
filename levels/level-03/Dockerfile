@@ -35,6 +35,7 @@ WORKDIR /home/$USER
 RUN mkdir .ssh
 RUN mkdir messages && chown $USER:$USER messages && chmod 700 messages
 RUN mkdir .vault && chown $USER:$USER .vault && chmod 700 .vault
+RUN mkdir dicts && chown $USER:$USER dicts && chmod 700 dicts
 
 # Adjust permissions
 RUN chown -R $USER:$USER .ssh
@@ -50,10 +51,8 @@ COPY levels/level-03/level-files/keys/level_3_access_rsa.pub .ssh/authorized_key
 RUN chmod 600 .ssh/authorized_keys
 
 # Copy files for the cipher challenge
-COPY levels/level-03/level-files/messages/message-1.txt messages/message-1.txt
-COPY levels/level-03/level-files/messages/message-2.txt messages/message-2.txt
-COPY levels/level-03/level-files/messages/message-3.txt messages/message-3.txt
 COPY levels/level-03/level-files/messages/encrypted_credentials.enc .vault/encrypted_credentials.enc
+COPY levels/level-03/level-files/rockyou.txt dicts/rockyou.txt
 
 # Expose SSH port
 EXPOSE 22
