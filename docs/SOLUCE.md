@@ -37,8 +37,6 @@ ssh -i key_rsa lvl03@10.100.3.2
 
 Résultat : username: lvl04 / password: 4IqOygbPL5dcFYPT
 
-
-
 ### Niveau 4: Naviguer dans le labyrinthe et trouver la sortie
 
 - Pour trouver la sortie du labyrinthe, il faut se suivre les IPs se terminant par des nombre premiers dans l'ordre croissant
@@ -52,7 +50,23 @@ Résultat : username: lvl04 / password: 4IqOygbPL5dcFYPT
 
 ### Niveau 5: Utiliser le social engineering pour obtenir des informations et cracker un mot de passe
 
-**WORK IN PROGRESS**
+Le mot de passe à cracker est contenu dans le ficher home/lvl05/security/hash.txt. Ce dernier est encodé en sha512.
+
+Le but ici est de construire un dictionnaire à analysant les données dispersées dans les différentes dossiers.
+Il apparait alors qu'il ya une plus grande somme d'informations pour l'employé Alice Martin, et que le contenu de ces 
+documents parlent souvent de son voyage à Tokyo en 2019.
+
+En associant ces informations et la note sur la potilitique de mot de passe, on peut faire l'hypothèse que le mot de passe
+d'Alice Martin est une variation autour de ce voyage à Tokyo en 2019. 
+
+Mot de passe : Tokyo2019!
+
+Commande hashcat pour cracker le mot de passe:
+```bash
+hashcat -m 1800 -a 0 <hash> -o cracked_passwords.txt
+# -m 1800 : spécifie le type de hash (sha512)
+```
+
 
 ### Niveau 6: Trouver la bonne séquence
 

@@ -14,8 +14,7 @@ OBJECTIF
 
   Exploiter les informations disponibles par
   social engineering pour identifier et cracker
-  un mot de passe. Cette pièce est la dernière.
-  Vous êtes à deux pas de la sortie.
+  un mot de passe.
 
 RAPPEL
 
