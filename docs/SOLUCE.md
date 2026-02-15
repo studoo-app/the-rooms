@@ -67,10 +67,11 @@ hashcat -m 1800 -a 0 <hash> -o cracked_passwords.txt
 # -m 1800 : spécifie le type de hash (sha512)
 ```
 
-
 ### Niveau 6: Trouver la bonne séquence
 
 **WORK IN PROGRESS**
+
+Auditer le fichier history des commandes bash pour trouver la séquence de port knocking permettant d'ouvrir le port ssh et se connecter à la machine suivante
 
 ### Niveau 7: Attaquer la base de données d'un site web
 

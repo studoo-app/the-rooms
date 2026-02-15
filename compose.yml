@@ -291,7 +291,8 @@ services:
       dockerfile: levels/level-09/Dockerfile
       args:
         USER: lvl-09
-        PASS: Audivi-Veni-Ascendi-Vici
+        PASS: Audivi-Veni-Pugnavi-Vici
+        #PASS: Audivi - veni - pugnavi - vici
     networks:
       nt-rooms-lvl-09:
         ipv4_address: 10.100.9.2
