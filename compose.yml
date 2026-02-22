@@ -38,7 +38,7 @@ services:
     container_name: tr-01-node-01
     build:
       context: .
-      dockerfile: rooms/room-01/Dockerfile
+      dockerfile: rooms/room-01/node-01/Dockerfile
       args:
         USER: node-01
         PASS: node-01-pass
@@ -109,6 +109,57 @@ services:
         ipv4_address: 10.100.3.2
       nw-tr-04:
         ipv4_address: 10.100.4.5
+
+  tr-03-node-01:
+    container_name: tr-03-node-01
+    build:
+      context: .
+      dockerfile: rooms/room-03/node-01/Dockerfile
+      args:
+        USER: node-01
+        PASS: node-01-pass
+    networks:
+      nw-tr-03:
+        ipv4_address: 10.100.3.3
+
+  tr-04-entrance:
+    container_name: tr-04-entrance
+    build:
+      context: .
+      dockerfile: rooms/entrance/Dockerfile
+      args:
+        USER: lvl04
+        PASS: AHslMhf94Rsm5rJj
+        ZIP_PASS: rtCR0iSQKclZrLUA
+        FLAG: FLAG-uhvg5a2b3c4d5e6f7g8h9i0j
+        NEXT_HOST: 10.100.5.2
+        NEXT_USER: lvl05
+        NEXT_PASS: OLZkJEQWY6rNO9Uf
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.2
+      nw-tr-05:
+        ipv4_address: 10.100.5.5
+
+
+  tr-05-entrance:
+    container_name: tr-05-entrance
+    build:
+      context: .
+      dockerfile: rooms/entrance/Dockerfile
+      args:
+        USER: lvl05
+        PASS: OLZkJEQWY6rNO9Uf
+        ZIP_PASS: hQLoQnIRBHgcR49H
+        FLAG: FLAG-TGU5a2b3c4d5e6f7g8h9i0j
+        NEXT_HOST: 10.100.6.2
+        NEXT_USER: lvl06
+        NEXT_PASS: AHslMhf94Rsm5rJj
+    networks:
+      nw-tr-05:
+        ipv4_address: 10.100.5.2
+      nw-tr-06:
+        ipv4_address: 10.100.6.5
 
 #  level-04-node-0:
 #    container_name: nt-rooms-lvl04-node-0
@@ -389,19 +440,19 @@ networks:
         - subnet: 10.100.4.0/26
           gateway: 10.100.4.1
 
-#  nw-tr-05:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.5.0/29
-#          gateway: 10.100.5.1
-#
-#  nw-tr-6:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.6.0/29
-#          gateway: 10.100.6.1
+  nw-tr-05:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.5.0/29
+          gateway: 10.100.5.1
+
+  nw-tr-06:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.6.0/29
+          gateway: 10.100.6.1
 #
 #  nw-tr-07:
 #    driver: bridge
