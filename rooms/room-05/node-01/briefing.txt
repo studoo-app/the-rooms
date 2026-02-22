@@ -1,0 +1,25 @@
+═══════════════════════════════════════════════
+        THE ROOMS  —  NIVEAU 5
+        The Puppet Master
+═══════════════════════════════════════════════
+
+MISSION
+
+  Cette pièce n'appartient pas à vous.
+  Elle appartient à quelqu'un d'autre.
+  Quelqu'un qui parle, qui réagit, qui
+  a des habitudes. Et des secrets.
+
+OBJECTIF
+
+  Exploiter les informations disponibles par
+  social engineering pour identifier et cracker
+  un mot de passe.
+
+RAPPEL
+
+  Les mots de passe les plus sécurisés
+  tombent devant celui qui sait bien
+  écouter.
+
+═══════════════════════════════════════════════

@@ -1,0 +1,107 @@
+================================================================================
+  📧  ARCHIVE EMAIL — Bob Dubois
+  Exporté le : 2025-01-15 | Système : Exchange DeepDive Corp
+================================================================================
+
+────────────────────────────────────────────────────────────────────────────────
+De      : bob.dubois@deepdive-corp.com
+À       : alice.martin@deepdive-corp.com
+Objet   : Déplacement Tokyo — Préparation & Documents
+Date    : 2019-04-10 | 09:15:22
+────────────────────────────────────────────────────────────────────────────────
+
+Alice,
+
+Votre déplacement à Tokyo est confirmé pour le 15 avril.
+Voici les détails de voyage :
+
+  • Vol       : Air France AF280 — départ CDG 11h30
+  • Hôtel     : Park Plaza Shinjuku (réservation sous nom entreprise)
+  • Durée     : 3 semaines (retour prévu le 5 mai)
+  • Contact   : M. Tanaka — tanaka@client-jp.com
+
+N'oubliez pas de vous faire rembourser les frais de déplacement
+avant votre retour. Le formulaire est sur l'intranet, section RH.
+
+Bonne mission !
+Bob
+
+────────────────────────────────────────────────────────────────────────────────
+De      : alice.martin@deepdive-corp.com
+À       : bob.dubois@deepdive-corp.com
+Objet   : Re: Déplacement Tokyo — Préparation & Documents
+Date    : 2019-04-11 | 14:22:18
+────────────────────────────────────────────────────────────────────────────────
+
+Bob,
+
+Merci pour les infos ! Tout bien reçu.
+
+J'ai téléchargé les documents du projet et préparé la présentation
+pour la première réunion avec M. Tanaka. J'ai aussi prévu de prendre
+quelques jours pour visiter Tokyo après la fin du projet.
+Le 15 avril sera un jour sympa pour commencer ! 😊
+
+À mon retour je préparerai le rapport détaillé.
+
+Alice
+
+────────────────────────────────────────────────────────────────────────────────
+De      : bob.dubois@deepdive-corp.com
+À       : alice.martin@deepdive-corp.com
+Objet   : Re: Retour Tokyo — Feedback client
+Date    : 2019-05-08 | 10:45:33
+────────────────────────────────────────────────────────────────────────────────
+
+Alice,
+
+Bienvenue à Paris !
+Le client nous a contacté directement pour exprimer sa satisfaction.
+Excellent travail à Tokyo — il mentionne explicitement votre prénom
+dans leur retour d'expérience.
+
+Merci de compléter le formulaire de retour d'expérience avant vendredi.
+
+Bob
+
+────────────────────────────────────────────────────────────────────────────────
+De      : alice.martin@deepdive-corp.com
+À       : rh@deepdive-corp.com
+Objet   : Demande de remboursement — Voyage Tokyo avril 2019
+Date    : 2019-05-10 | 16:30:12
+────────────────────────────────────────────────────────────────────────────────
+
+Bonjour,
+
+Veuillez trouver ci-joint le formulaire de remboursement pour mon
+déplacement professionnel à Tokyo du 15 avril au 5 mai 2019.
+
+  • Vol (aller-retour)    : 1 420€
+  • Hôtel (21 nuits)      : 2 150€
+  • Repas & transport     :   680€
+  • Montant total         : 4 250€
+
+Merci d'avance.
+Alice Martin — Senior Developer, DeepDive Corp
+
+────────────────────────────────────────────────────────────────────────────────
+De      : bob.dubois@deepdive-corp.com
+À       : all-engineering@deepdive-corp.com
+Objet   : Rappel — Politique de mots de passe (mise à jour janvier 2025)
+Date    : 2025-01-05 | 08:00:01
+────────────────────────────────────────────────────────────────────────────────
+
+Team,
+
+Rappel important : tous les mots de passe entreprise doivent être
+renouvelés avant le 15 janvier 2025.
+
+La politique a été mise à jour. Consultez le document officiel
+disponible sur le serveur interne :
+  → /security/password_policy.txt
+
+En cas de questions, contactez le département sécurité IT.
+
+Bob Dubois — Director of Engineering
+
+================================================================================
