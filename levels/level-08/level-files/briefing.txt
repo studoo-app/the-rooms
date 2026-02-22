@@ -1,6 +1,6 @@
 Bienvenue honorable aventurier
 
-Vous vous tenez devant la porte vous bloquant l'entree de l'Elysée.
+Vous vous tenez devant la porte vous bloquant l'entrée de l'Elysée.
 
 Pour entrer, vous allez devoir triompher des quatres gardiens. Chaque gardien est un expert dans son domaine,
 et vous devrez faire preuve de ruse et de courage pour les vaincre.
@@ -10,6 +10,8 @@ Chaque victoire vous octroiera :
  - une partie du mot de passe nécessaire pour l'ouvrir
 
 Audentes fortuna iuvat.
+
+----------------------------------------------------------------------------------
 
 Salve, honorabile explorator.
 

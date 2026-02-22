@@ -1,372 +1,425 @@
 services:
-  lobby:
-    container_name: rooms-lobby
+  tr-00-gate:
+    container_name: tr-00-gate
     build:
       context: .
-      dockerfile: lobby/Dockerfile
+      dockerfile: gate/Dockerfile
       args:
-        USER: newbie
-        PASS: Welcome@TheRooms
+        USER: challenger
+        PASS: welcome
     ports:
       - "2200:22"
     networks:
-        nt-rooms-lobby:
+        nw-tr-gate:
             ipv4_address: 10.100.0.2
-        nt-rooms-lvl-01:
+        nw-tr-01:
             ipv4_address: 10.100.1.5
 
-  level-01:
-    container_name: nt-rooms-lvl01
+  tr-01-entrance:
+    container_name: tr-01-entrance
     build:
       context: .
-      dockerfile: levels/level-01/Dockerfile
+      dockerfile: rooms/entrance/Dockerfile
       args:
         USER: lvl01
         PASS: starting_jouney
+        ZIP_PASS: 9VOsfCMsHhAiIohU
+        FLAG: FLAG-1a2b3c4d5e6f7g8h9i0j
+        NEXT_HOST: 10.100.2.2
+        NEXT_USER: lvl02
+        NEXT_PASS: LQU8PvANkAuYitkQ
     networks:
-        nt-rooms-lvl-01:
+        nw-tr-01:
             ipv4_address: 10.100.1.2
-        nt-rooms-lvl-02:
+        nw-tr-02:
           ipv4_address: 10.100.2.5
 
-  level-02:
-    container_name: nt-rooms-lvl02
+  tr-01-node-01:
+    container_name: tr-01-node-01
     build:
       context: .
-      dockerfile: levels/level-02/Dockerfile
+      dockerfile: rooms/room-01/Dockerfile
+      args:
+        USER: node-01
+        PASS: node-01-pass
+        SECRET_KEY: 9VOsfCMsHhAiIohU
+    networks:
+        nw-tr-01:
+            ipv4_address: 10.100.1.3
+
+  tr-02-entrance:
+    container_name: tr-02-entrance
+    build:
+      context: .
+      dockerfile: rooms/entrance/Dockerfile
       args:
         USER: lvl02
         PASS: LQU8PvANkAuYitkQ
+        ZIP_PASS: UDc4kyqHxurVDnYt
+        FLAG: FLAG-2a2b3c4d5e6f7g8h9i0j
+        NEXT_HOST: 10.100.3.2
+        NEXT_USER: lvl03
+        NEXT_PASS: gLCGN9pvWG1EY7MR
     networks:
-      nt-rooms-lvl-02:
+      nw-tr-02:
         ipv4_address: 10.100.2.2
-      nt-rooms-lvl-03:
+      nw-tr-03:
         ipv4_address: 10.100.3.5
 
-  level-03:
-    container_name: nt-rooms-lvl03
+  tr-02-node-01:
+    container_name: tr-02-node-01
     build:
       context: .
-      dockerfile: levels/level-03/Dockerfile
+      dockerfile: rooms/room-02/node-01/Dockerfile
+      args:
+        USER: node-01
+        PASS: node-01-pass
+    networks:
+      nw-tr-02:
+        ipv4_address: 10.100.2.3
+
+  tr-02-node-02:
+    container_name: tr-02-node-02
+    build:
+      context: .
+      dockerfile: rooms/room-02/node-02/Dockerfile
+      args:
+        USER: node-02
+        PASS: node-02-pass
+        SECRET_KEY: UDc4kyqHxurVDnYt
+    networks:
+      nw-tr-02:
+        ipv4_address: 10.100.2.4
+
+  tr-03-entrance:
+    container_name: tr-03-entrance
+    build:
+      context: .
+      dockerfile: rooms/entrance/Dockerfile
       args:
         USER: lvl03
-        PASS: 9VOsfCMsHhAiIohU
+        PASS: gLCGN9pvWG1EY7MR
+        ZIP_PASS: a3to1NNUGu84xTv5
+        FLAG: FLAG-43a2b3c4d5e6f7g8h9i0j
+        NEXT_HOST: 10.100.4.2
+        NEXT_USER: lvl04
+        NEXT_PASS: AHslMhf94Rsm5rJj
     networks:
-      nt-rooms-lvl-03:
+      nw-tr-03:
         ipv4_address: 10.100.3.2
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.13
+      nw-tr-04:
+        ipv4_address: 10.100.4.5
 
-  level-04-node-0:
-    container_name: nt-rooms-lvl04-node-0
-    build:
-      context: .
-      dockerfile: levels/level-04/node-0/Dockerfile
-      args:
-        USER: lvl04
-        PASS: 4IqOygbPL5dcFYPT
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.17
-
-  level-04-node-01:
-    container_name: nt-rooms-lvl04-node-1
-    build:
-      context: .
-      dockerfile: levels/level-04/node-1/Dockerfile
-      args:
-        USER: lvl04-node-01
-        PASS: oamgPLpLCm7J
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.23
-
-  level-04-node-02:
-    container_name: nt-rooms-lvl04-node-2
-    build:
-      context: .
-      dockerfile: levels/level-04/node-2/Dockerfile
-      args:
-        USER: lvl04-node-02
-        PASS: fCq7pAMedfs5
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.16
-
-  level-04-node-03:
-    container_name: nt-rooms-lvl04-node-3
-    build:
-      context: .
-      dockerfile: levels/level-04/node-3/Dockerfile
-      args:
-        USER: lvl04-node-03
-        PASS: 8zVlPa95ujNx
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.31
-
-  level-04-node-04:
-    container_name: nt-rooms-lvl04-node-4
-    build:
-      context: .
-      dockerfile: levels/level-04/node-4/Dockerfile
-      args:
-        USER: lvl04-node-04
-        PASS: xMeS1ZB7Zymt
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.21
-
-  level-04-node-05:
-    container_name: nt-rooms-lvl04-node-5
-    build:
-      context: .
-      dockerfile: levels/level-04/node-5/Dockerfile
-      args:
-        USER: lvl04-node-05
-        PASS: qNaaGZhM6mZ0
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.37
-
-  level-04-node-06:
-    container_name: nt-rooms-lvl04-node-6
-    build:
-      context: .
-      dockerfile: levels/level-04/node-6/Dockerfile
-      args:
-        USER: lvl04-node-06
-        PASS: ijL73e5eHxvh
-    networks:
-      nt-rooms-lvl-04:
-        ipv4_address: 10.100.4.42
-      nt-rooms-lvl-05:
-        ipv4_address: 10.100.5.5
-
-  level-05:
-    container_name: nt-rooms-lvl05
-    build:
-      context: .
-      dockerfile: levels/level-05/Dockerfile
-      args:
-        USER: lvl05
-        PASS: fwVYIhgpePLO9Y1t
-    networks:
-      nt-rooms-lvl-05:
-        ipv4_address: 10.100.5.2
-      nt-rooms-lvl-06:
-        ipv4_address: 10.100.6.5
-
-  level-06:
-    container_name: nt-rooms-lvl06
-    build:
-      context: .
-      dockerfile: levels/level-06/Dockerfile
-      args:
-        USER: lvl06
-        PASS: Tokyo2019!
-    networks:
-      nt-rooms-lvl-06:
-        ipv4_address: 10.100.6.2
-      nt-rooms-lvl-07:
-        ipv4_address: 10.100.7.5
-
-  level-07:
-    container_name: nt-rooms-lvl07
-    build:
-      context: .
-      dockerfile: levels/level-07/Dockerfile
-      args:
-        USER: lvl07
-        PASS: NzjDHpnK28psXCFJ
-    cap_add:
-      - NET_ADMIN
-    networks:
-      nt-rooms-lvl-07:
-        ipv4_address: 10.100.7.2
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.7
-
-  level-07-webserver:
-    container_name: nt-rooms-lvl07-webserver
-    build:
-      context: .
-      dockerfile: levels/level-07-webserver/Dockerfile
-    volumes:
-      - ./levels/level-07-webserver/app:/app
-    ports:
-      - "8001:80"
-    environment:
-      - SERVER_NAME=:80
-      - APP_ENV=dev
-    networks:
-        nt-rooms-lvl-07:
-            ipv4_address: 10.100.7.3
-
-  level-07-dbserver:
-    container_name:  nt-rooms-lvl07-dbserver
-    image: mariadb:11
+#  level-04-node-0:
+#    container_name: nt-rooms-lvl04-node-0
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-0/Dockerfile
+#      args:
+#        USER: lvl04
+#        PASS: 4IqOygbPL5dcFYPT
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.17
+#
+#  level-04-node-01:
+#    container_name: nt-rooms-lvl04-node-1
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-1/Dockerfile
+#      args:
+#        USER: lvl04-node-01
+#        PASS: oamgPLpLCm7J
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.23
+#
+#  level-04-node-02:
+#    container_name: nt-rooms-lvl04-node-2
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-2/Dockerfile
+#      args:
+#        USER: lvl04-node-02
+#        PASS: fCq7pAMedfs5
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.16
+#
+#  level-04-node-03:
+#    container_name: nt-rooms-lvl04-node-3
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-3/Dockerfile
+#      args:
+#        USER: lvl04-node-03
+#        PASS: 8zVlPa95ujNx
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.31
+#
+#  level-04-node-04:
+#    container_name: nt-rooms-lvl04-node-4
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-4/Dockerfile
+#      args:
+#        USER: lvl04-node-04
+#        PASS: xMeS1ZB7Zymt
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.21
+#
+#  level-04-node-05:
+#    container_name: nt-rooms-lvl04-node-5
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-5/Dockerfile
+#      args:
+#        USER: lvl04-node-05
+#        PASS: qNaaGZhM6mZ0
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.37
+#
+#  level-04-node-06:
+#    container_name: nt-rooms-lvl04-node-6
+#    build:
+#      context: .
+#      dockerfile: levels/level-04/node-6/Dockerfile
+#      args:
+#        USER: lvl04-node-06
+#        PASS: ijL73e5eHxvh
+#    networks:
+#      nt-rooms-lvl-04:
+#        ipv4_address: 10.100.4.42
+#      nt-rooms-lvl-05:
+#        ipv4_address: 10.100.5.5
+#
+#  level-05:
+#    container_name: nt-rooms-lvl05
+#    build:
+#      context: .
+#      dockerfile: levels/level-05/Dockerfile
+#      args:
+#        USER: lvl05
+#        PASS: fwVYIhgpePLO9Y1t
+#    networks:
+#      nt-rooms-lvl-05:
+#        ipv4_address: 10.100.5.2
+#      nt-rooms-lvl-06:
+#        ipv4_address: 10.100.6.5
+#
+#  level-06:
+#    container_name: nt-rooms-lvl06
+#    build:
+#      context: .
+#      dockerfile: levels/level-06/Dockerfile
+#      args:
+#        USER: lvl06
+#        PASS: Tokyo2019!
+#    networks:
+#      nt-rooms-lvl-06:
+#        ipv4_address: 10.100.6.2
+#      nt-rooms-lvl-07:
+#        ipv4_address: 10.100.7.5
+#
+#  level-07:
+#    container_name: nt-rooms-lvl07
+#    build:
+#      context: .
+#      dockerfile: levels/level-07/Dockerfile
+#      args:
+#        USER: lvl07
+#        PASS: NzjDHpnK28psXCFJ
+#    cap_add:
+#      - NET_ADMIN
+#    networks:
+#      nt-rooms-lvl-07:
+#        ipv4_address: 10.100.7.2
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.7
+#
+#  level-07-webserver:
+#    container_name: nt-rooms-lvl07-webserver
+#    build:
+#      context: .
+#      dockerfile: levels/level-07-webserver/Dockerfile
+#    volumes:
+#      - ./levels/level-07-webserver/app:/app
 #    ports:
-#      - "3306:3306"
-    restart: always
-    environment:
-      MYSQL_DATABASE: app_db
-      MYSQL_ROOT_PASSWORD: studoo
-      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-      #MYSQL_USER: app_db_user
-      #MYSQL_PASSWORD: app_db_password
-    volumes:
-      - ./levels/level-07-dbserver/var/dbdata:/var/lib/mysql
-      - ./levels/level-07-dbserver/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
-    networks:
-        nt-rooms-lvl-07:
-            ipv4_address: 10.100.7.4
-
-  level-08:
-    container_name: nt-rooms-lvl08
-    build:
-      context: .
-      dockerfile: levels/level-08/Dockerfile
-      args:
-        USER: lvl08
-        PASS: 8zVlPa95ujNx
-    networks:
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.2
-      nt-rooms-lvl-09:
-        ipv4_address: 10.100.9.5
-
-  level-08-fragment-01:
-    container_name: nt-rooms-lvl08-fragment-01
-    build:
-      context: .
-      dockerfile: levels/level-08-fragment-01/Dockerfile
-      args:
-        USER: prima-custodia
-        PASS: Primum-Fragmentum
-    networks:
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.3
-
-  level-08-fragment-02:
-    container_name: nt-rooms-lvl08-fragment-02
-    build:
-      context: .
-      dockerfile: levels/level-08-fragment-02/Dockerfile
-      args:
-        USER: secundo-custodiae
-        PASS: Secundum-Fragmentum
-    networks:
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.4
-
-  level-08-fragment-03:
-    container_name: nt-rooms-lvl08-fragment-03
-    build:
-      context: .
-      dockerfile: levels/level-08-fragment-03/Dockerfile
-      args:
-        USER: tertia-custodia
-        PASS: Tertium-Fragmentum
-    networks:
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.5
-
-  level-08-fragment-04:
-    container_name: nt-rooms-lvl08-fragment-04
-    build:
-      context: .
-      dockerfile: levels/level-08-fragment-04/Dockerfile
-      args:
-        USER: quarta-custodia
-        PASS: Quartum-Fragmentum
-    networks:
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.6
-
-  level-09:
-    container_name: nt-rooms-lvl09
-    build:
-      context: .
-      dockerfile: levels/level-09/Dockerfile
-      args:
-        USER: lvl-09
-        PASS: Audivi-Veni-Pugnavi-Vici
-        #PASS: Audivi - veni - pugnavi - vici
-    networks:
-      nt-rooms-lvl-09:
-        ipv4_address: 10.100.9.2
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.13
+#      - "8001:80"
+#    environment:
+#      - SERVER_NAME=:80
+#      - APP_ENV=dev
+#    networks:
+#        nt-rooms-lvl-07:
+#            ipv4_address: 10.100.7.3
+#
+#  level-07-dbserver:
+#    container_name:  nt-rooms-lvl07-dbserver
+#    image: mariadb:11
+##    ports:
+##      - "3306:3306"
+#    restart: always
+#    environment:
+#      MYSQL_DATABASE: app_db
+#      MYSQL_ROOT_PASSWORD: studoo
+#      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+#      #MYSQL_USER: app_db_user
+#      #MYSQL_PASSWORD: app_db_password
+#    volumes:
+#      - ./levels/level-07-dbserver/var/dbdata:/var/lib/mysql
+#      - ./levels/level-07-dbserver/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
+#    networks:
+#        nt-rooms-lvl-07:
+#            ipv4_address: 10.100.7.4
+#
+#  level-08:
+#    container_name: nt-rooms-lvl08
+#    build:
+#      context: .
+#      dockerfile: levels/level-08/Dockerfile
+#      args:
+#        USER: lvl08
+#        PASS: 8zVlPa95ujNx
+#    networks:
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.2
+#      nt-rooms-lvl-09:
+#        ipv4_address: 10.100.9.5
+#
+#  level-08-fragment-01:
+#    container_name: nt-rooms-lvl08-fragment-01
+#    build:
+#      context: .
+#      dockerfile: levels/level-08-fragment-01/Dockerfile
+#      args:
+#        USER: prima-custodia
+#        PASS: Primum-Fragmentum
+#    networks:
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.3
+#
+#  level-08-fragment-02:
+#    container_name: nt-rooms-lvl08-fragment-02
+#    build:
+#      context: .
+#      dockerfile: levels/level-08-fragment-02/Dockerfile
+#      args:
+#        USER: secundo-custodiae
+#        PASS: Secundum-Fragmentum
+#    networks:
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.4
+#
+#  level-08-fragment-03:
+#    container_name: nt-rooms-lvl08-fragment-03
+#    build:
+#      context: .
+#      dockerfile: levels/level-08-fragment-03/Dockerfile
+#      args:
+#        USER: tertia-custodia
+#        PASS: Tertium-Fragmentum
+#    networks:
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.5
+#
+#  level-08-fragment-04:
+#    container_name: nt-rooms-lvl08-fragment-04
+#    build:
+#      context: .
+#      dockerfile: levels/level-08-fragment-04/Dockerfile
+#      args:
+#        USER: quarta-custodia
+#        PASS: Quartum-Fragmentum
+#    networks:
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.6
+#
+#  level-09:
+#    container_name: nt-rooms-lvl09
+#    build:
+#      context: .
+#      dockerfile: levels/level-09/Dockerfile
+#      args:
+#        USER: lvl-09
+#        PASS: Audivi-Veni-Pugnavi-Vici
+#        #PASS: Audivi - veni - pugnavi - vici
+#    networks:
+#      nt-rooms-lvl-09:
+#        ipv4_address: 10.100.9.2
+#      nt-rooms-lvl-08:
+#        ipv4_address: 10.100.8.13
 
 ################################################
 networks:
-  nt-rooms-lobby:
+  nw-tr-gate:
     driver: bridge
     ipam:
       config:
         - subnet: 10.100.0.0/29
           gateway: 10.100.0.1
 
-  nt-rooms-lvl-01:
+  nw-tr-01:
     driver: bridge
     ipam:
       config:
         - subnet: 10.100.1.0/29
           gateway: 10.100.1.1
 
-  nt-rooms-lvl-02:
+  nw-tr-02:
     driver: bridge
     ipam:
       config:
         - subnet: 10.100.2.0/29
           gateway: 10.100.2.1
 
-  nt-rooms-lvl-03:
+  nw-tr-03:
     driver: bridge
     ipam:
       config:
         - subnet: 10.100.3.0/29
           gateway: 10.100.3.1
 
-  nt-rooms-lvl-04:
+  nw-tr-04:
     driver: bridge
     ipam:
       config:
         - subnet: 10.100.4.0/26
           gateway: 10.100.4.1
 
-  nt-rooms-lvl-05:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.5.0/29
-          gateway: 10.100.5.1
-
-  nt-rooms-lvl-06:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.6.0/29
-          gateway: 10.100.6.1
-
-  nt-rooms-lvl-07:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.7.0/29
-          gateway: 10.100.7.1
-
-  nt-rooms-lvl-08:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.8.0/26
-          gateway: 10.100.8.1
-
-  nt-rooms-lvl-09:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.9.0/29
-          gateway: 10.100.9.1
+#  nw-tr-05:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.5.0/29
+#          gateway: 10.100.5.1
+#
+#  nw-tr-6:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.6.0/29
+#          gateway: 10.100.6.1
+#
+#  nw-tr-07:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.7.0/29
+#          gateway: 10.100.7.1
+#
+#  nw-tr-08:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.8.0/26
+#          gateway: 10.100.8.1
+#
+#  nw-tr-09:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.9.0/29
+#          gateway: 10.100.9.1

@@ -1,4 +1,4 @@
-FROM debian:12
+FROM debian:12-slim
 
 # Get the username and password from build arguments
 ARG USER
@@ -10,18 +10,10 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     net-tools \
     openssh-server \
-    nmap \
     && rm -rf /var/lib/apt/lists/*
-
-# Copy motd file TODO: provide motd file for node 4-1
-#COPY levels/level-04/node-1/config-files/motd.txt /etc/motd
-
 
 # Create directory for SSH daemon
 RUN mkdir /var/run/sshd
-
-# Copy custom sshd_config
-COPY levels/level-04/node-1/config-files/sshd_config /etc/ssh/sshd_config
 
 # Create the user and set password
 RUN useradd -m -s /bin/bash $USER
@@ -30,6 +22,24 @@ RUN usermod -aG sudo $USER
 
 # Set working directory to the user's home
 WORKDIR /home/$USER
+
+# Create challenge directories
+RUN mkdir .keys
+RUN mkdir -p .confidential/.hidden
+RUN mkdir docs
+
+# Adjust permissions
+RUN chown -R $USER:$USER .keys
+RUN chown -R $USER:$USER .confidential
+RUN chmod -R 700 .confidential
+
+# Copy the briefing file into the user's home directory
+#COPY levels/level-02/level-files/briefing.txt docs/briefing.txt
+
+# Copy Challenge files
+COPY rooms/room-02/node-01/keys/decoy .keys
+COPY rooms/room-02/node-01/keys/valid .confidential/.hidden
+RUN chown -R $USER:$USER .confidential/.hidden
 
 # Expose SSH port
 EXPOSE 22
