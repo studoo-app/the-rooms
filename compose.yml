@@ -254,7 +254,7 @@ services:
         USER: node-01
         PASS: node-01-pass
     networks:
-      nw-tr-03:
+      nw-tr-05:
         ipv4_address: 10.100.5.3
 
 #  level-06:

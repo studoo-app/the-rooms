@@ -20,6 +20,10 @@ RUN useradd -m -s /bin/bash $USER && \
 
 WORKDIR /home/$USER
 
+RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
+
+COPY docs/resources docs
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]
