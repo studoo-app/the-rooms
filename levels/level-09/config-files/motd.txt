@@ -1,8 +1,0 @@
-================================================================================================
-Congratulations on reaching Level 7!
-FLAG: FLAG{You_reached_the_deepest_room}
-
-Find a way to proceed deeper...
-
-Hint: take a look at the briefing document located at /docs/briefing.txt
-================================================================================================

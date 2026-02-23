@@ -1,0 +1,14 @@
+172.20.3.100 - - [13/Jan/2024:14:25:33 +0000] "GET / HTTP/1.1" 200 1234 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+172.20.3.100 - - [13/Jan/2024:14:25:45 +0000] "GET /api/status HTTP/1.1" 200 87 "-" "curl/7.68.0"
+172.20.3.100 - - [13/Jan/2024:14:26:12 +0000] "GET /api/fragment?key=9000 HTTP/1.1" 401 156 "-" "curl/7.68.0"
+172.20.3.100 - - [13/Jan/2024:14:26:30 +0000] "POST /api/auth HTTP/1.1" 200 345 "-" "curl/7.68.0"
+172.20.3.100 - developer [13/Jan/2024:14:26:45 +0000] "GET /api/fragment?key=9000 HTTP/1.1" 200 89 "-" "curl/7.68.0"
+172.20.3.100 - developer [13/Jan/2024:14:27:15 +0000] "GET /download/data.zip HTTP/1.1" 200 4096 "-" "wget/1.20.3"
+
+192.168.10.10 - admin [13/Jan/2024:15:45:15 +0000] "GET /admin/dashboard HTTP/1.1" 200 5678 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+192.168.10.10 - admin [13/Jan/2024:15:47:22 +0000] "GET /admin/secrets?part=Charlie HTTP/1.1" 200 234 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+192.168.10.10 - admin [13/Jan/2024:15:50:08 +0000] "POST /admin/verify HTTP/1.1" 200 45 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+192.168.10.10 - admin [13/Jan/2024:15:52:30 +0000] "GET /admin/logout HTTP/1.1" 302 0 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+172.20.3.15 - developer [13/Jan/2024:16:13:44 +0000] "GET /download/data_9000.zip HTTP/1.1" 200 4096 "-" "wget/1.20.3"
+192.168.10.25 - maintenance [13/Jan/2024:16:14:22 +0000] "GET /tools/backup.sh HTTP/1.1" 200 567 "-" "curl/7.68.0"
