@@ -6,13 +6,12 @@
 
 Bienvenue dans "The Rooms" !
 
-Vous venez d'entrer dans le Lobby, le point d'entrée de cette infrastructure sécurisée.
-Votre mission consiste à progresser à travers 10 niveaux de difficulté
-croissante, en utilisant vos compétences en administration système, en développement et en
-cybersécurité.
+Vous venez d'entrer dans le Hub, le point d'entrée de cette infrastructure sécurisée. autour de vous se trouvent
+8 portes, chacune menant à un niveau différent du défi "The Rooms".
 
-La progression se fait en accédant à chaque niveau successif, vous récupérerez des Flags
-(chaînes de caractères uniques) qui prouvent votre réussite.
+Votre mission consiste à récupérer les Flags cachés dans les différents niveaux de "The Rooms".
+Chaque niveau représente un défi unique, mettant à l'épreuve vos compétences en administration système, développement et cybersécurité.
+
 
 Pour commencer votre aventure, connecter au niveau 1 en utilisant les informations
 d'identification suivantes :

@@ -1,7 +1,7 @@
 services:
 
-  tr-00-hub:
-    container_name: tr-00-hub
+  room-00:
+    container_name: room-00
     build:
       context: .
       dockerfile: hub/Dockerfile
@@ -14,16 +14,16 @@ services:
         nw-tr-hub:
             ipv4_address: 10.100.0.2
 
-  tr-01:
-    container_name: tr-01
+  room-01:
+    container_name: room-01
     build:
       context: .
       dockerfile: rooms/room-01/Dockerfile
       args:
-        USER: lvl01
+        USER: room-01
         PASS: password
         ZIP_PASS: 9VOsfCMsHhAiIohU
-        FLAG: FLAG-1a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{h1dd3n_1n_pl41n_s1ght}
         NEXT_HOST: 10.100.0.4
         NEXT_USER: lvl02
         NEXT_PASS: LQU8PvANkAuYitkQ
@@ -31,19 +31,19 @@ services:
         nw-tr-hub:
             ipv4_address: 10.100.0.3
 
-  tr-02:
-    container_name: tr-02
+  room-02:
+    container_name: room-02
     build:
       context: .
       dockerfile: rooms/room-02/node-01/Dockerfile
       args:
-        USER: lvl02
+        USER: room-02
         PASS: LQU8PvANkAuYitkQ
         ZIP_PASS: UDc4kyqHxurVDnYt
-        FLAG: FLAG-2a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{pr1v4t3_k3y_unl0ck3d}
         NEXT_HOST: 10.100.3.2
         NEXT_USER: lvl03
-        NEXT_PASS: gLCGN9pvWG1EY7MR
+        NEXT_PASS: gLCGN9pvWG1E,h,s<Y7MR
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.4
@@ -67,12 +67,12 @@ services:
     container_name: tr-03
     build:
       context: .
-      dockerfile: rooms/entrance/Dockerfile
+      dockerfile: rooms/room-03/Dockerfile
       args:
         USER: lvl03
         PASS: gLCGN9pvWG1EY7MR
         ZIP_PASS: a3to1NNUGu84xTv5
-        FLAG: FLAG-43a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{3ncrypt10n_15_n0t_s3cur1ty}
         NEXT_HOST: 10.100.4.2
         NEXT_USER: lvl04
         NEXT_PASS: AHslMhf94Rsm5rJj
@@ -84,12 +84,12 @@ services:
     container_name: tr-04
     build:
       context: .
-      dockerfile: rooms/entrance/Dockerfile
+      dockerfile: rooms/room-04/node-00/Dockerfile
       args:
         USER: lvl04
         PASS: AHslMhf94Rsm5rJj
         ZIP_PASS: rtCR0iSQKclZrLUA
-        FLAG: FLAG-uhvg5a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{pr0xy_jump_m4st3r}
         NEXT_HOST: 10.100.5.2
         NEXT_USER: lvl05
         NEXT_PASS: OLZkJEQWY6rNO9Uf
@@ -176,12 +176,12 @@ services:
     container_name: tr-05
     build:
       context: .
-      dockerfile: rooms/entrance/Dockerfile
+      dockerfile: rooms/room-05/Dockerfile
       args:
-        USER: lvl05
+        USER: room-05
         PASS: OLZkJEQWY6rNO9Uf
         ZIP_PASS: Tokyo2019!
-        FLAG: FLAG-TGU5a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{s0c14l_h4ck_c0mpl3t3}
         NEXT_HOST: 10.100.6.2
         NEXT_USER: lvl06
         NEXT_PASS: AHslMhf94Rsm5rJj
@@ -195,10 +195,10 @@ services:
       context: .
       dockerfile: rooms/room-06/node-01/Dockerfile
       args:
-        USER: lvl06
+        USER: room-06
         PASS: AHslMhf94Rsm5rJj
         ZIP_PASS: ajxO7Iz9DbTxBol7
-        FLAG: FLAG-TGU5a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{kn0ck_kn0ck_wh0_5_th3r3}
         NEXT_HOST: 10.100.7.2
         NEXT_USER: lvl06
         NEXT_PASS: cBFxcBRyheV9AeZ9
@@ -214,7 +214,7 @@ services:
       context: .
       dockerfile: rooms/room-06/node-02/Dockerfile
       args:
-        USER: lvl06
+        USER: node-01
         PASS: AHslMhf94Rsm5rJj
         SECRET_KEY: ajxO7Iz9DbTxBol7
     networks:
@@ -227,10 +227,10 @@ services:
       context: .
       dockerfile: rooms/room-07/node-01/Dockerfile
       args:
-        USER: lvl01
+        USER: room-07
         PASS: password
         ZIP_PASS: yRv7LBte6rE4zxnY
-        FLAG: FLAG-1a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{dr0p_t4bl3_dr0p_th3_m1c}
         NEXT_HOST: 10.100.0.4
         NEXT_USER: lvl02
         NEXT_PASS: LQU8PvANkAuYitkQ
@@ -279,18 +279,48 @@ services:
     container_name: tr-08
     build:
       context: .
-      dockerfile: rooms/room-08/Dockerfile
+      dockerfile: rooms/room-08/node-01/Dockerfile
       args:
-        USER: lvl08
+        USER: room-08
         PASS: password
         ZIP_PASS: AMZ63JYowitEDcfq
-        FLAG: FLAG-1a2b3c4d5e6f7g8h9i0j
+        FLAG: FLAG{4ll_p13c35_c0m3_t0g3th3r}
         NEXT_HOST: 10.100.0.4
         NEXT_USER: lvl02
         NEXT_PASS: LQU8PvANkAuYitkQ
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.10
+      nw-tr-08:
+        ipv4_address: 10.100.8.2
+
+  tr-08-node-01:
+    container_name: tr-08-node-02
+    build:
+      context: .
+      dockerfile: rooms/room-08/node-02/Dockerfile
+      args:
+        USER: node-01
+        PASS: password
+        SECRET_KEY: AMZ63JYowitEDcf
+    networks:
+      nw-tr-08:
+        ipv4_address: 10.100.8.3
+
+  tr-09:
+    container_name: tr-09
+    build:
+      context: .
+      dockerfile: rooms/room-09/Dockerfile
+      args:
+        USER: room-09
+        PASS: password
+        FLAG: FLAG{th3_r00ms_c0nqu3r3d}
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.11
+
+
 
 
 ################################################
@@ -351,12 +381,12 @@ networks:
         - subnet: 10.100.7.0/29
           gateway: 10.100.7.1
 
-#  nw-tr-08:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.8.0/26
-#          gateway: 10.100.8.1
+  nw-tr-08:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.8.0/26
+          gateway: 10.100.8.1
 #
 #  nw-tr-09:
 #    driver: bridge

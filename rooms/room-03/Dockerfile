@@ -49,7 +49,7 @@ COPY rooms/room-03/rockyou.txt dicts/rockyou.txt
 
 # Create secret-key file
 
-RUN echo "$ZIP_PASS" > .secrets/.hidden/secret-key.txt
+#RUN echo "$ZIP_PASS" > .secrets/.hidden/secret-key.txt
 
 
 EXPOSE 22

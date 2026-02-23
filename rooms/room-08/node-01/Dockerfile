@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     zip \
     unzip \
+    knockd \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd

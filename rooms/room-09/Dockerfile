@@ -1,54 +1,61 @@
-FROM debian:12
+FROM debian:12-slim
 
-# Get the username and password from build arguments
 ARG USER
 ARG PASS
+ARG FLAG
 
-# Update package lists and install necessary packages
+# ============================================================
+# INSTALLATION DES PAQUETS
+# ============================================================
 RUN apt-get update && apt-get install -y \
     curl \
     iputils-ping \
     net-tools \
     openssh-server \
-    nmap \
-    knockd \
+    sudo \
+    zip \
+    unzip \
+    ssss \
+    vim \
+    findutils \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy motd file TODO: provide motd file for level 9
-#COPY levels/level-04/node-1/config-files/motd.txt /etc/motd
+# ============================================================
+# CONFIGURATION SSH — root interdit de se connecter
+# ============================================================
+RUN mkdir /var/run/sshd && \
+    echo "PermitRootLogin no"            >> /etc/ssh/sshd_config && \
+    echo "PasswordAuthentication yes"    >> /etc/ssh/sshd_config
+
+# ============================================================
+# CRÉATION DE L'UTILISATEUR
+# ============================================================
+RUN useradd -m -s /bin/bash ${USER} && \
+    echo "${USER}:${PASS}" | chpasswd
+
+# ============================================================
+# ssss RÉSERVÉ À ROOT UNIQUEMENT
+# ============================================================
+RUN chown root:root /usr/bin/ssss-combine && \
+    chmod 700 /usr/bin/ssss-combine
+
+# ============================================================
+# FAILLE SUDO — misconfiguration vim (GTFOBins)
+# L'utilisateur peut lancer vim en root sans mot de passe
+# Exploitation : sudo vim -c ':!/bin/bash'
+# ============================================================
+RUN echo "${USER} ALL=(root) NOPASSWD: /usr/bin/vim" >> /etc/sudoers
+
+# ============================================================
+# GÉNÉRATION DES 8 FRAGMENTS SSSS À PARTIR DU FLAG
+# Chaque fragment est placé dans une room distincte
+# Lisible par root uniquement (chmod 400)
+# ============================================================
 
 
-# Create directory for SSH daemon
-RUN mkdir /var/run/sshd
+WORKDIR /home/${USER}
 
-# Copy custom sshd_config
-COPY levels/level-09/config-files/sshd_config /etc/ssh/sshd_config
 
-# Create the user and set password
-RUN useradd -m -s /bin/bash $USER
-RUN echo "$USER:$PASS" | chpasswd
-RUN usermod -aG sudo $USER
-
-# Set working directory to the user's home
-WORKDIR /home/$USER
-
-# Create challenge directories and copy files
-RUN mkdir docs .ssh
-
-# Adjust permissions
-RUN chown -R $USER:$USER .ssh
-RUN chmod 700 .ssh
-
-# Copy the briefing file into the user's home directory
-COPY levels/level-09/level-files/briefing.txt docs/briefing.txt
-COPY levels/level-09/level-files/knockd.conf /etc/knockd.conf
-
-# Copy SSH keys for level access
-COPY levels/level-09/level-files/key.pub .ssh/authorized_keys
-RUN chmod 600 .ssh/authorized_keys
-
-# Expose SSH port
 EXPOSE 22
 
-# Start the SSH daemon
 CMD ["/usr/sbin/sshd", "-D"]
