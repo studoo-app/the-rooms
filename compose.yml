@@ -63,8 +63,8 @@ services:
       nw-tr-02:
         ipv4_address: 10.100.2.4
 
-  tr-03-entrance:
-    container_name: tr-03-entrance
+  tr-03:
+    container_name: tr-03
     build:
       context: .
       dockerfile: rooms/entrance/Dockerfile
@@ -187,9 +187,7 @@ services:
         NEXT_PASS: AHslMhf94Rsm5rJj
     networks:
       nw-tr-hub:
-        ipv4_address: 10.100.0.10
-      nw-tr-05:
-        ipv4_address: 10.100.5.4
+        ipv4_address: 10.100.0.7
 
   tr-06:
     container_name: tr-06
@@ -224,7 +222,7 @@ services:
         ipv4_address: 10.100.6.4
 
   tr-07:
-    container_name: tr-01
+    container_name: tr-07
     build:
       context: .
       dockerfile: rooms/room-07/node-01/Dockerfile
@@ -242,56 +240,57 @@ services:
       nw-tr-07:
         ipv4_address: 10.100.7.3
 
-  level-07:
-    container_name: nt-rooms-lvl07
+  tr-07-web:
+    container_name: tr-07-web
     build:
       context: .
-      dockerfile: levels/level-07/Dockerfile
-      args:
-        USER: lvl07
-        PASS: NzjDHpnK28psXCFJ
-    cap_add:
-      - NET_ADMIN
+      dockerfile: rooms/room-07/node-02/Dockerfile
+    volumes:
+      - ./rooms/room-07/node-02/app:/app
+    ports:
+      - "8001:80"
+    environment:
+      - SERVER_NAME=:80
+      - APP_ENV=dev
     networks:
-      nt-rooms-lvl-07:
-        ipv4_address: 10.100.7.2
-      nt-rooms-lvl-08:
-        ipv4_address: 10.100.8.7
+        nw-tr-07:
+            ipv4_address: 10.100.7.4
 
-#  level-07-webserver:
-#    container_name: nt-rooms-lvl07-webserver
-#    build:
-#      context: .
-#      dockerfile: levels/level-07-webserver/Dockerfile
-#    volumes:
-#      - ./levels/level-07-webserver/app:/app
+  tr-07-db:
+    container_name:  tr-07-db
+    image: mariadb:11
 #    ports:
-#      - "8001:80"
-#    environment:
-#      - SERVER_NAME=:80
-#      - APP_ENV=dev
-#    networks:
-#        nt-rooms-lvl-07:
-#            ipv4_address: 10.100.7.3
+#      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: app_db
+      MYSQL_ROOT_PASSWORD: studoo
+      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      #MYSQL_USER: app_db_user
+      #MYSQL_PASSWORD: app_db_password
+    volumes:
+      - ./rooms/room-07/node-03/var/dbdata:/var/lib/mysql
+      - ./rooms/room-07/node-03/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+        nw-tr-07:
+            ipv4_address: 10.100.7.5
 
-#  level-07-dbserver:
-#    container_name:  nt-rooms-lvl07-dbserver
-#    image: mariadb:11
-##    ports:
-##      - "3306:3306"
-#    restart: always
-#    environment:
-#      MYSQL_DATABASE: app_db
-#      MYSQL_ROOT_PASSWORD: studoo
-#      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-#      #MYSQL_USER: app_db_user
-#      #MYSQL_PASSWORD: app_db_password
-#    volumes:
-#      - ./levels/level-07-dbserver/var/dbdata:/var/lib/mysql
-#      - ./levels/level-07-dbserver/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
-#    networks:
-#        nt-rooms-lvl-07:
-#            ipv4_address: 10.100.7.4
+  tr-08:
+    container_name: tr-08
+    build:
+      context: .
+      dockerfile: rooms/room-08/Dockerfile
+      args:
+        USER: lvl08
+        PASS: password
+        ZIP_PASS: AMZ63JYowitEDcfq
+        FLAG: FLAG-1a2b3c4d5e6f7g8h9i0j
+        NEXT_HOST: 10.100.0.4
+        NEXT_USER: lvl02
+        NEXT_PASS: LQU8PvANkAuYitkQ
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.10
 
 
 ################################################
@@ -300,15 +299,15 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.100.0.0/24
+        - subnet: 10.100.0.0/28
           gateway: 10.100.0.1
 
-  nw-tr-01:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.1.0/29
-          gateway: 10.100.1.1
+#  nw-tr-01:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.1.0/29
+#          gateway: 10.100.1.1
 
   nw-tr-02:
     driver: bridge
@@ -317,12 +316,12 @@ networks:
         - subnet: 10.100.2.0/29
           gateway: 10.100.2.1
 
-  nw-tr-03:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.3.0/29
-          gateway: 10.100.3.1
+#  nw-tr-03:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.3.0/29
+#          gateway: 10.100.3.1
 
   nw-tr-04:
     driver: bridge
@@ -331,12 +330,12 @@ networks:
         - subnet: 10.100.4.0/26
           gateway: 10.100.4.1
 
-  nw-tr-05:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.5.0/29
-          gateway: 10.100.5.1
+#  nw-tr-05:
+#    driver: bridge
+#    ipam:
+#      config:
+#        - subnet: 10.100.5.0/29
+#          gateway: 10.100.5.1
 
   nw-tr-06:
     driver: bridge
