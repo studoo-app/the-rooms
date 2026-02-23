@@ -1,0 +1,4 @@
+quotes:
+    uri: /
+    controller: Controller\QuotesController
+    httpMethod: [GET]
