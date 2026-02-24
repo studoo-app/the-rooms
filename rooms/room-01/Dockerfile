@@ -4,6 +4,7 @@ ARG USER
 ARG PASS
 ARG ZIP_PASS
 ARG FLAG
+ARG SECRET_PART
 ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
@@ -26,6 +27,7 @@ RUN useradd -m -s /bin/bash $USER && \
 
 RUN mkdir -p /tmp/secret && \
     echo "$FLAG" > /tmp/secret/flag.txt && \
+    echo "$SECRET_PART" > /tmp/secret/key_part.txt && \
     if [ -n "$NEXT_HOST" ] && [ -n "$NEXT_USER" ] && [ -n "$NEXT_PASS" ]; then \
         printf "=== Accès niveau suivant ===\nHost : %s\nUser : %s\nPass : %s\n" \
             "$NEXT_HOST" "$NEXT_USER" "$NEXT_PASS" > /tmp/secret/next_level.txt; \
