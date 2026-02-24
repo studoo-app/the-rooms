@@ -12,10 +12,11 @@ Vous venez d'entrer dans le Hub, le point d'entrée de cette infrastructure séc
 Votre mission consiste à récupérer les Flags cachés dans les différents niveaux de "The Rooms".
 Chaque niveau représente un défi unique, mettant à l'épreuve vos compétences en administration système, développement et cybersécurité.
 
+Vous trouverez aussi une partie de la cle permettant d'accéder à la salle finale contenant le Flag final.
 
 Pour commencer votre aventure, connecter au niveau 1 en utilisant les informations
 d'identification suivantes :
 
-  • Nom d'utilisateur : lvl01
+  • Nom d'utilisateur : room-01
   • Mot de passe      : starting_jouney!
 
