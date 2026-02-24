@@ -1,0 +1,19 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         THE ROOMS CHALLENGE - NIVEAU 5 : JOSIANE A LA LANGUE BIEN PENDUE  ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Bienvenue dans le système de Josiane !
+
+Josiane, 66 ans, secrétaire de mairie pendant 30 ans, connaît tout le
+monde et tout le monde la connaît. Elle parle beaucoup... peut-être
+même un peu trop. Son archive est protégée par un code qu'elle seule
+est supposée connaître.
+
+Votre mission :
+  Trouvez le code de déverrouillage de l'archive de Josiane. Les
+  informations dont vous avez besoin sont peut-être plus accessibles
+  qu'il n'y paraît. Une fois l'archive ouverte, vous y trouverez ce
+  dont vous avez besoin pour continuer votre aventure.
+

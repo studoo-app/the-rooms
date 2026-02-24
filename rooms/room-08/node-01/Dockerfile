@@ -38,6 +38,9 @@ RUN mkdir -p /tmp/secret && \
 
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-08/node-01/niveau-08-huguette.txt briefing.txt
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]

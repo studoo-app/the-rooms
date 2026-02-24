@@ -42,6 +42,9 @@ RUN mkdir -p /tmp/secret && \
 # Set working directory to the user's home
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-02/node-01/niveau-02-roger.txt briefing.txt
+
 # Create challenge directories
 RUN mkdir .keys
 RUN mkdir -p .confidential/.hidden

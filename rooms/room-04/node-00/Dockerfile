@@ -38,6 +38,9 @@ RUN mkdir -p /tmp/secret && \
 
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-04/niveau-04-gerard.txt briefing.txt
+
 # Create challenge directories# Copy the briefing file into the user's home directory
 RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
 COPY rooms/room-04/node-00/briefing.txt docs/briefing.txt

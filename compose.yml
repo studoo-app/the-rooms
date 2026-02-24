@@ -21,7 +21,7 @@ services:
       dockerfile: rooms/room-01/Dockerfile
       args:
         USER: gilbert
-        PASS: password
+        PASS: Y2hZbdUmtAPF4Ft0
         ZIP_PASS: 9VOsfCMsHhAiIohU
         FLAG: FLAG{h1dd3n_1n_pl41n_s1ght}
         NEXT_HOST: 10.100.0.4
@@ -52,8 +52,8 @@ services:
       nw-tr-02:
         ipv4_address: 10.100.2.3
 
-  tr-02-node-02:
-    container_name: tr-02-node-02
+  room-02-node-02:
+    container_name: room-02-node-02
     build:
       context: .
       dockerfile: rooms/room-02/node-02/Dockerfile
@@ -65,8 +65,8 @@ services:
       nw-tr-02:
         ipv4_address: 10.100.2.4
 
-  tr-03:
-    container_name: tr-03
+  room-03:
+    container_name: room-03
     build:
       context: .
       dockerfile: rooms/room-03/Dockerfile
@@ -83,8 +83,8 @@ services:
       nw-tr-hub:
         ipv4_address: 10.100.0.5
 
-  tr-04:
-    container_name: tr-04
+  room-04:
+    container_name: room-04
     build:
       context: .
       dockerfile: rooms/room-04/node-00/Dockerfile
@@ -103,8 +103,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.17
 
-  tr-04-node-01:
-    container_name: tr-04-node-01
+  room-04-node-01:
+    container_name: room-04-node-01
     build:
       context: .
       dockerfile: rooms/room-04/node-01/Dockerfile
@@ -115,8 +115,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.23
 
-  tr-04-node-02:
-    container_name: tr-04-node-02
+  room-04-node-02:
+    container_name: room-04-node-02
     build:
       context: .
       dockerfile: rooms/room-04/node-02/Dockerfile
@@ -127,8 +127,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.16
 
-  tr-04-node-03:
-    container_name: tr-04-node-03
+  room-04-node-03:
+    container_name: room-04-node-03
     build:
       context: .
       dockerfile: rooms/room-04/node-03/Dockerfile
@@ -139,8 +139,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.31
 
-  tr-04-node-04:
-    container_name: tr-04-node-04
+  room-04-node-04:
+    container_name: room-04-node-04
     build:
       context: .
       dockerfile: rooms/room-04/node-04/Dockerfile
@@ -151,8 +151,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.21
 
-  tr-04-node-05:
-    container_name: tr-04-node-05
+  room-04-node-05:
+    container_name: room-04-node-05
     build:
       context: .
       dockerfile: rooms/room-04/node-05/Dockerfile
@@ -163,8 +163,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.37
 
-  tr-04-node-06:
-    container_name: tr-04-node-06
+  room-04-node-06:
+    container_name: room-04-node-06
     build:
       context: .
       dockerfile: rooms/room-04/node-06/Dockerfile
@@ -176,8 +176,8 @@ services:
       nw-tr-04:
         ipv4_address: 10.100.4.42
 
-  tr-05:
-    container_name: tr-05
+  room-05:
+    container_name: room-05
     build:
       context: .
       dockerfile: rooms/room-05/Dockerfile
@@ -194,8 +194,8 @@ services:
       nw-tr-hub:
         ipv4_address: 10.100.0.7
 
-  tr-06:
-    container_name: tr-06
+  room06:
+    container_name: room06
     build:
       context: .
       dockerfile: rooms/room-06/node-01/Dockerfile
@@ -214,8 +214,8 @@ services:
       nw-tr-06:
         ipv4_address: 10.100.6.3
 
-  tr-06-node-01:
-    container_name: tr-06-node-01
+  room06-node-01:
+    container_name: room06-node-01
     build:
       context: .
       dockerfile: rooms/room-06/node-02/Dockerfile
@@ -227,8 +227,8 @@ services:
       nw-tr-06:
         ipv4_address: 10.100.6.4
 
-  tr-07:
-    container_name: tr-07
+  room07:
+    container_name: room07
     build:
       context: .
       dockerfile: rooms/room-07/node-01/Dockerfile
@@ -247,8 +247,8 @@ services:
       nw-tr-07:
         ipv4_address: 10.100.7.3
 
-  tr-07-web:
-    container_name: tr-07-web
+  room07-web:
+    container_name: room07-web
     build:
       context: .
       dockerfile: rooms/room-07/node-02/Dockerfile
@@ -263,8 +263,8 @@ services:
         nw-tr-07:
             ipv4_address: 10.100.7.4
 
-  tr-07-db:
-    container_name:  tr-07-db
+  room07-db:
+    container_name:  room07-db
     image: mariadb:11
 #    ports:
 #      - "3306:3306"
@@ -282,8 +282,8 @@ services:
         nw-tr-07:
             ipv4_address: 10.100.7.5
 
-  tr-08:
-    container_name: tr-08
+  room08:
+    container_name: room08
     build:
       context: .
       dockerfile: rooms/room-08/node-01/Dockerfile
@@ -302,8 +302,8 @@ services:
       nw-tr-08:
         ipv4_address: 10.100.8.2
 
-  tr-08-node-01:
-    container_name: tr-08-node-02
+  room08-node-01:
+    container_name: room08-node-02
     build:
       context: .
       dockerfile: rooms/room-08/node-02/Dockerfile
@@ -315,8 +315,8 @@ services:
       nw-tr-08:
         ipv4_address: 10.100.8.3
 
-  tr-09:
-    container_name: tr-09
+  room09:
+    container_name: room09
     build:
       context: .
       dockerfile: rooms/room-09/Dockerfile
@@ -329,8 +329,6 @@ services:
         ipv4_address: 10.100.0.11
 
 
-
-
 ################################################
 networks:
   nw-tr-hub:
@@ -340,13 +338,6 @@ networks:
         - subnet: 10.100.0.0/28
           gateway: 10.100.0.1
 
-#  nw-tr-01:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.1.0/29
-#          gateway: 10.100.1.1
-
   nw-tr-02:
     driver: bridge
     ipam:
@@ -354,26 +345,12 @@ networks:
         - subnet: 10.100.2.0/29
           gateway: 10.100.2.1
 
-#  nw-tr-03:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.3.0/29
-#          gateway: 10.100.3.1
-
   nw-tr-04:
     driver: bridge
     ipam:
       config:
         - subnet: 10.100.4.0/26
           gateway: 10.100.4.1
-
-#  nw-tr-05:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.5.0/29
-#          gateway: 10.100.5.1
 
   nw-tr-06:
     driver: bridge
@@ -395,10 +372,3 @@ networks:
       config:
         - subnet: 10.100.8.0/26
           gateway: 10.100.8.1
-#
-#  nw-tr-09:
-#    driver: bridge
-#    ipam:
-#      config:
-#        - subnet: 10.100.9.0/29
-#          gateway: 10.100.9.1

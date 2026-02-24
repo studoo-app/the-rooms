@@ -38,6 +38,9 @@ RUN mkdir -p /tmp/secret && \
 
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-06/niveau-06-michel.txt briefing.txt
+
 EXPOSE 22
 
 CMD ["/usr/sbin/sshd", "-D"]

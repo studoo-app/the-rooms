@@ -1,0 +1,18 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         THE ROOMS CHALLENGE - NIVEAU 7 : L'INTRUSION DE JACQUELINE        ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Bienvenue dans le système de Jacqueline !
+
+Jacqueline, 68 ans, s'invite partout sans y avoir été conviée. Son site
+web perso — qu'elle a fait faire par "le fils du voisin" — contient un
+formulaire de connexion. Ce fils de voisin faisait de son mieux.
+Ce n'était visiblement pas suffisant.
+
+Votre mission :
+  Exploitez le site web de Jacqueline pour en extraire le code de
+  déverrouillage de son archive. Une fois l'archive ouverte, vous y
+  trouverez ce dont vous avez besoin pour continuer votre aventure.
+

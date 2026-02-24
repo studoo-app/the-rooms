@@ -37,6 +37,9 @@ RUN mkdir -p /tmp/secret && \
 
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-03/niveau-03-bernard.txt briefing.txt
+
 # Create challenge directories
 RUN mkdir messages && chown $USER:$USER messages && chmod 700 messages
 RUN mkdir .vault && chown $USER:$USER .vault && chmod 700 .vault

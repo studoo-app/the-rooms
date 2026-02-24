@@ -6,17 +6,29 @@
 
 Bienvenue dans "The Rooms" !
 
-Vous venez d'entrer dans le Hub, le point d'entrée de cette infrastructure sécurisée. autour de vous se trouvent
-8 portes, chacune menant à un niveau différent du défi "The Rooms".
+Vous venez d'entrer dans le Hub, le point d'entrée de cette infrastructure
+sécurisée. Autour de vous se trouvent 8 portes, chacune menant à un niveau
+différent du défi "The Rooms".
 
-Votre mission consiste à récupérer les Flags cachés dans les différents niveaux de "The Rooms".
-Chaque niveau représente un défi unique, mettant à l'épreuve vos compétences en administration système, développement et cybersécurité.
+VOS OBJECTIFS :
+───────────────
+  Chaque niveau abrite un personnage. Chacun d'eux cache quelque chose.
+  À vous de trouver quoi, et comment y accéder.
 
-Vous trouverez aussi une partie de la cle permettant d'accéder à la salle finale contenant le Flag final.
+  Ce que vous trouverez dans chaque niveau vous permettra de progresser
+  et de constituer, au fil de votre parcours, ce dont vous aurez besoin
+  pour affronter la dernière gardienne de "The Rooms".
 
-Pour commencer votre aventure, connecter au niveau 1 en utilisant les informations
-d'identification suivantes :
+RÈGLES :
+────────
+  • Les niveaux doivent être abordés dans l'ordre
+  • Chaque niveau vous fournit ce dont vous avez besoin pour accéder au suivant
+  • Chaque Flag suit le format : FLAG{...}
 
-  • Nom d'utilisateur : room-01
-  • Mot de passe      : starting_jouney!
+Pour commencer votre aventure, connectez-vous au niveau 1 :
 
+  • Hôte               : 10.100.0.3
+  • Nom d'utilisateur  : gilbert
+  • Mot de passe       : JaiTrouvéLeCahier#Caché
+
+  Bonne chance.

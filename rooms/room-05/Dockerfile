@@ -39,6 +39,9 @@ RUN mkdir -p /tmp/secret && \
 
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-05/niveau-05-josiane.txt briefing.txt
+
 # Copy the briefing file into the user's home directory
 #COPY levels/level-05/level-files/briefing.txt docs/briefing.txt
 

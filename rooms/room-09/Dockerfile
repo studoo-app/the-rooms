@@ -55,6 +55,9 @@ RUN echo "${USER} ALL=(root) NOPASSWD: /usr/bin/vim" >> /etc/sudoers
 
 WORKDIR /home/${USER}
 
+# Copy the briefing file
+COPY rooms/room-09/niveau-09-monique.txt briefing.txt
+
 
 EXPOSE 22
 

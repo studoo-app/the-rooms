@@ -1,0 +1,18 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         THE ROOMS CHALLENGE - NIVEAU 2 : LE TROUSSEAU DE ROGER            ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Bienvenue dans le système de Roger !
+
+Roger, 71 ans, ancien serrurier, ne fait confiance qu'aux clés. Pas de
+mot de passe pour lui : "Un mot de passe ça s'oublie, une clé ça se tient
+dans la main !" Sa machine voisine n'accepte pas n'importe qui.
+
+Votre mission :
+  Trouvez ce qui vous permettra de vous authentifier sur la machine
+  voisine d'Yvette, et récupérez-y le fichier contenant le code de
+  déverrouillage de l'archive. Une fois l'archive ouverte, vous y
+  trouverez ce dont vous avez besoin pour continuer votre aventure.
+

@@ -1,0 +1,19 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         THE ROOMS CHALLENGE - NIVEAU 4 : LE LABYRINTHE DE GÉRARD          ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Bienvenue dans le réseau de Gérard !
+
+Gérard, 74 ans, a configuré son réseau un dimanche après-midi "pour
+s'occuper". Le résultat est un labyrinthe de machines interconnectées
+dont lui-même a perdu le plan. Quelque part au fond de ce réseau se
+trouve une machine qui détient le précieux fichier...
+
+Votre mission :
+  Naviguez dans le réseau de Gérard, trouvez la machine de Lucette
+  et récupérez le code de déverrouillage de l'archive. Une fois
+  l'archive ouverte, vous y trouverez ce dont vous avez besoin
+  pour continuer votre aventure.
+

@@ -38,6 +38,9 @@ RUN mkdir -p /tmp/secret && \
 
 WORKDIR /home/$USER
 
+# Copy the briefing file
+COPY rooms/room-01/niveau-01-gilbert.txt briefing.txt
+
 # Create challenge directories
 
 RUN mkdir docs
