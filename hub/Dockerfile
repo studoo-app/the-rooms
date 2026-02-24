@@ -22,6 +22,8 @@ WORKDIR /home/$USER
 
 RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
 
+COPY /hub/motd.txt /etc/motd
+COPY /hub/briefing.txt briefing.txt
 COPY docs/resources docs
 
 EXPOSE 22

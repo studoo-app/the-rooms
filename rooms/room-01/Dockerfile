@@ -47,7 +47,6 @@ RUN mkdir docs
 RUN mkdir -p .secrets/.hidden
 
 # Copy Challenge files
-
 COPY rooms/room-01/backup_credentials.txt .secrets/backup_credentials.txt
 
 # Create secret-key file
