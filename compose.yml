@@ -44,7 +44,7 @@ services:
         FLAG: FLAG{pr1v4t3_k3y_unl0ck3d}
         NEXT_HOST: 10.100.3.2
         NEXT_USER: lvl03
-        NEXT_PASS: gLCGN9pvWG1E,h,s<Y7MR
+        NEXT_PASS: gLCGN9pvWG1EY7MR
         SECRET_PART: fe61fe7b7f73810ae1c425368800ee29452da9b4368bb87b78cbb9c1307b6b67
     networks:
       nw-tr-hub:
@@ -234,7 +234,7 @@ services:
       dockerfile: rooms/room-07/node-01/Dockerfile
       args:
         USER: jacqueline
-        PASS: password
+        PASS: cBFxcBRyheV9AeZ9
         ZIP_PASS: yRv7LBte6rE4zxnY
         FLAG: FLAG{dr0p_t4bl3_dr0p_th3_m1c}
         NEXT_HOST: 10.100.0.4
@@ -289,12 +289,12 @@ services:
       dockerfile: rooms/room-08/node-01/Dockerfile
       args:
         USER: huguette
-        PASS: password
+        PASS: LQU8PvANkAuYitkQ
         ZIP_PASS: AMZ63JYowitEDcfq
         FLAG: FLAG{4ll_p13c35_c0m3_t0g3th3r}
         NEXT_HOST: 10.100.0.4
         NEXT_USER: lvl02
-        NEXT_PASS: LQU8PvANkAuYitkQ
+        NEXT_PASS: MBjHcQ02uyXSFrmH
         SECRET_PART: 77ba815e13fd76a312b2d3372cad0de4ffc0f2dd8c857bd1ad2392d31b96039a
     networks:
       nw-tr-hub:
@@ -322,7 +322,7 @@ services:
       dockerfile: rooms/room-09/Dockerfile
       args:
         USER: monique
-        PASS: password
+        PASS: MBjHcQ02uyXSFrmH
         FLAG: FLAG{th3_r00ms_c0nqu3r3d}
     networks:
       nw-tr-hub:

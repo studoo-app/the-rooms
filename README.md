@@ -33,3 +33,21 @@ pour déverouiller et accéder au niveau suivant.
 | Niveau 8 | Fragment Hunt | Exploration réseau, cryptographie, changement de port, port knocking, social engineering|
 | Niveau 9 | The End | Reconstruction de clé |
 
+## Démarrage et accès au Hub
+
+### Démarrage des containers
+
+Sur le serveur hôte, lancez la commande suivante pour démarrer les containers Docker :
+
+```bash
+    docker compose up -d
+```
+
+### Accès au Hub
+
+```bash
+    ssh -p 2222 challenger@<ip_address>
+ 
+    # Password : welcome
+```
+
