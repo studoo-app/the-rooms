@@ -8,6 +8,8 @@ ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
 
+ENV PATH=$PATH:/sbin:/usr/sbin
+
 RUN apt-get update && apt-get install -y \
     curl \
     iputils-ping \
@@ -16,6 +18,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     zip \
     unzip \
+    hashcat \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
@@ -54,6 +57,8 @@ COPY rooms/room-03/rockyou.txt dicts/rockyou.txt
 # Create secret-key file
 
 #RUN echo "$ZIP_PASS" > .secrets/.hidden/secret-key.txt
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
 
 EXPOSE 22

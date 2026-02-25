@@ -9,6 +9,7 @@ ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
 
+
 RUN apt-get update && apt-get install -y \
     curl \
     iputils-ping \
@@ -20,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd
+
 
 RUN useradd -m -s /bin/bash $USER && \
     echo "$USER:$PASS" | chpasswd && \
@@ -53,6 +55,7 @@ COPY rooms/room-01/backup_credentials.txt .secrets/backup_credentials.txt
 
 RUN echo "$ZIP_PASS" > .secrets/.hidden/secret-key.txt
 
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
 EXPOSE 22
 

@@ -4,19 +4,19 @@
 ═══════════════════════════════════════════════
 
 Node 01:
-node-01 / oamgPLpLCm7J
+rene / oamgPLpLCm7J
 
 Node 02:
-node-02 / fCq7pAMedfs5
+fernand / fCq7pAMedfs5
 
 Node 03:
-node-03 / 8zVlPa95ujNx
+gaston / 8zVlPa95ujNx
 
 Node 04:
-node-04 / xMeS1ZB7Zymt
+raymond / xMeS1ZB7Zymt
 
 Node 05 :
-node-05 / qNaaGZhM6mZ0
+maurice / qNaaGZhM6mZ0
 
 Node 06:
-node-06 / ijL73e5eHxvh
+lucette / ijL73e5eHxvh

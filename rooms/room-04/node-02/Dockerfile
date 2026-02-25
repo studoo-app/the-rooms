@@ -4,6 +4,8 @@ FROM debian:12-slim
 ARG USER
 ARG PASS
 
+ENV PATH=$PATH:/sbin:/usr/sbin
+
 # Update package lists and install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \
@@ -11,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     openssh-server \
     nmap \
+    sudo \
     && rm -rf /var/lib/apt/lists/*
 
 # Create directory for SSH daemon

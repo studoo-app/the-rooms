@@ -3,6 +3,7 @@ FROM debian:12-slim
 # Get the username and password from build arguments
 ARG USER
 ARG PASS
+ARG SECRET_KEY
 
 # Update package lists and install necessary packages
 RUN apt-get update && apt-get install -y \
@@ -11,6 +12,7 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     openssh-server \
     nmap \
+    sudo \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy motd file TODO: provide motd file for node 4-5
@@ -30,6 +32,10 @@ RUN usermod -aG sudo $USER
 
 # Set working directory to the user's home
 WORKDIR /home/$USER
+
+RUN mkdir docs
+RUN echo "$SECRET_KEY" > docs/secret-key.txt
+RUN chown -R $USER:$USER docs && chmod 700 docs
 
 # Expose SSH port
 EXPOSE 22

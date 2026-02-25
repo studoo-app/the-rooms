@@ -5,15 +5,19 @@ ARG USER
 ARG PASS
 ARG ZIP_PASS
 ARG FLAG
+ARG SECRET_PART
 ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
+
+ENV PATH=$PATH:/sbin:/usr/sbin
 
 # Update package lists and install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \
     iputils-ping \
     net-tools \
+    nmap \
     openssh-server \
     sudo \
     zip \
@@ -62,6 +66,8 @@ RUN chmod -R 700 .confidential
 COPY rooms/room-02/node-01/keys/decoy .keys
 COPY rooms/room-02/node-01/keys/valid .confidential/.hidden
 RUN chown -R $USER:$USER .confidential/.hidden
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
 # Expose SSH port
 EXPOSE 22

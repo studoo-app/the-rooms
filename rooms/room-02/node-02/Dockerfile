@@ -5,6 +5,8 @@ ARG USER
 ARG PASS
 ARG SECRET_KEY
 
+ENV PATH=$PATH:/sbin:/usr/sbin
+
 # Update package lists and install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \
@@ -38,6 +40,7 @@ RUN mkdir docs
 
 RUN echo "$SECRET_KEY" > docs/secret-key.txt
 
+RUN chown -R $USER:$USER /home/$USER/docs && chmod -R 700 /home/$USER/docs
 
 # Create challenge directories
 RUN mkdir .ssh

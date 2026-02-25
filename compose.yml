@@ -25,7 +25,7 @@ services:
         ZIP_PASS: 9VOsfCMsHhAiIohU
         FLAG: FLAG{h1dd3n_1n_pl41n_s1ght}
         NEXT_HOST: 10.100.0.4
-        NEXT_USER: lvl02
+        NEXT_USER: roger
         NEXT_PASS: LQU8PvANkAuYitkQ
         SECRET_PART: 7205137a8b8327274b49e063e94e91f95ae085728772c57e12decf1549dff6dc
     networks:
@@ -42,8 +42,8 @@ services:
         PASS: LQU8PvANkAuYitkQ
         ZIP_PASS: UDc4kyqHxurVDnYt
         FLAG: FLAG{pr1v4t3_k3y_unl0ck3d}
-        NEXT_HOST: 10.100.3.2
-        NEXT_USER: lvl03
+        NEXT_HOST: 10.100.0.5
+        NEXT_USER: bernard
         NEXT_PASS: gLCGN9pvWG1EY7MR
         SECRET_PART: fe61fe7b7f73810ae1c425368800ee29452da9b4368bb87b78cbb9c1307b6b67
     networks:
@@ -75,8 +75,8 @@ services:
         PASS: gLCGN9pvWG1EY7MR
         ZIP_PASS: a3to1NNUGu84xTv5
         FLAG: FLAG{3ncrypt10n_15_n0t_s3cur1ty}
-        NEXT_HOST: 10.100.4.2
-        NEXT_USER: lvl04
+        NEXT_HOST: 10.100.0.6
+        NEXT_USER: gerard
         NEXT_PASS: AHslMhf94Rsm5rJj
         SECRET_PART: 788d1b27411e1a09a54530f62516930719178621f993c9b0cb8c77e7fbec7d8e
     networks:
@@ -93,8 +93,8 @@ services:
         PASS: AHslMhf94Rsm5rJj
         ZIP_PASS: rtCR0iSQKclZrLUA
         FLAG: FLAG{pr0xy_jump_m4st3r}
-        NEXT_HOST: 10.100.5.2
-        NEXT_USER: lvl05
+        NEXT_HOST: 10.100.0.7
+        NEXT_USER: josiane
         NEXT_PASS: OLZkJEQWY6rNO9Uf
         SECRET_PART: 9eed1b9a30452d215a2809232c05cf7234178fb1d016c447b66b794082374ae9
     networks:
@@ -159,6 +159,7 @@ services:
       args:
         USER: maurice
         PASS: qNaaGZhM6mZ0
+        SECRET_KEY: rtCR0iSQKclZrLUA
     networks:
       nw-tr-04:
         ipv4_address: 10.100.4.37
@@ -171,7 +172,6 @@ services:
       args:
         USER: lucette
         PASS: ijL73e5eHxvh
-        SECRET_KEY: rtCR0iSQKclZrLUA
     networks:
       nw-tr-04:
         ipv4_address: 10.100.4.42

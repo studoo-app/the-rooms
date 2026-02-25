@@ -12,6 +12,8 @@ RUN apt-get update && apt-get install -y \
     zip \
     && rm -rf /var/lib/apt/lists/*
 
+COPY /hub/motd.txt /etc/motd
+
 RUN mkdir /var/run/sshd
 
 RUN useradd -m -s /bin/bash $USER && \
@@ -22,9 +24,11 @@ WORKDIR /home/$USER
 
 RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
 
-COPY /hub/motd.txt /etc/motd
 COPY /hub/briefing.txt briefing.txt
 COPY docs/resources docs
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
+
 
 EXPOSE 22
 

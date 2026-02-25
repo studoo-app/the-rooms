@@ -8,8 +8,28 @@
 
 - lister les fichiers et dossiers cachés avec `ls -la`
 - trouver le dossier caché `.secrets/.hidden` et accéder à son contenu
-- trouver le fichier `key` et l'utiliser pour se connecter en SSH au niveau suivant
+- trouver le fichier `secret-key.txt` et son contenu afin de décompresser l'archive `secret.zip
+- décompresser l'archive `secret.zip` pour trouver le mot de passe du niveau suivant
 - Le fichier backup_credentials.txt est un leurre, il contient des informations fausses pour détourner les participants
+
+**Décompression de l'archive:**
+```bash
+  unzip -P 9VOsfCMsHhAiIohU secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{h1dd3n_1n_pl41n_s1ght}
+- contenu du fichier key_part.txt : 7205137a8b8327274b49e063e94e91f95ae085728772c57e12decf1549dff6dc
+- contenu du fichier next_level.txt : 
+  - Host : 10.100.0.4 
+  - User : roger 
+  - Pass : LQU8PvANkAuYitkQ
 
 
 ### Niveau 2: Authentification SSH par clé privée
@@ -21,8 +41,28 @@
 
 **Commande pour se connecter en SSH avec la clé privée:**
 ```bash
-ssh -i key_rsa lvl03@10.100.3.2
+# se rendre dans /confidential/.hidden
+ssh -i key_rsa yvette@10.100.2.4
 ```
+
+**Décompression de l'archive:**
+```bash
+  unzip -P UDc4kyqHxurVDnYt secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{pr1v4t3_k3y_unl0ck3d}
+- contenu du fichier key_part.txt : fe61fe7b7f73810ae1c425368800ee29452da9b4368bb87b78cbb9c1307b6b67
+- contenu du fichier next_level.txt :
+    - Host : 10.100.0.5
+    - User : bernard
+    - Pass : gLCGN9pvWG1EY7MR
 
 ### Niveau 3: Détecter le / les cryptages utilisés et décoder des messages
 
@@ -33,20 +73,56 @@ ssh -i key_rsa lvl03@10.100.3.2
 - Etape 1 : Décoder le message qui en est encodé en base64
 - Etape 2 : reperer le param password dans la chaine obtenu, ainsi que le param algo
 - Etape 3 : Utiliser hashcat pour cracker le mot de passe en utilisant l'algo spécifié (md5) et le fichier dictionnaire rockyou.txt
-  - `hashcat -m 0 -a 0 <hash> rockyou.txt`
+  - `hashcat -m 0 -a 0 <hash> dicts/rockyou.txt`
 
-Résultat : username: lvl04 / password: 4IqOygbPL5dcFYPT
+**Décompression de l'archive:**
+```bash
+  unzip -P a3to1NNUGu84xTv5 secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{3ncrypt10n_15_n0t_s3cur1ty}
+- contenu du fichier key_part.txt : 788d1b27411e1a09a54530f62516930719178621f993c9b0cb8c77e7fbec7d8e
+- contenu du fichier next_level.txt :
+    - Host : 10.100.0.6
+    - User : gerard
+    - Pass : AHslMhf94Rsm5rJj
 
 ### Niveau 4: Naviguer dans le labyrinthe et trouver la sortie
 
 - Pour trouver la sortie du labyrinthe, il faut se suivre les IPs se terminant par des nombre premiers dans l'ordre croissant
-- Il est possible de trouver ces IPs en analysant les fichiers de configuration SSH des différents nœuds du labyrinthe, chaque fichier conntient une restriction d'accès à une IP spécifique
+- Il est possible de trouver ces IPs en analysant le reseau avec nmap, ensuite les fichiers de configuration SSH des différents nœuds du labyrinthe, chaque fichier conntient une restriction d'accès à une IP spécifique
 - Voici la liste des IPs à suivre pour trouver la sortie du labyrinthe:
   - 10.100.4.17 (node 0)
   - 10.100.4.23 (node 1)
   - 10.100.4.31 (node 3)
   - 10.100.4.37 (node 5)
 - Les autres IPs sont des leurres, elles ne mènent à rien ou à des impasses
+
+**Décompression de l'archive:**
+```bash
+  unzip -P rtCR0iSQKclZrLUA secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{pr0xy_jump_m4st3r}
+- contenu du fichier key_part.txt : 9eed1b9a30452d215a2809232c05cf7234178fb1d016c447b66b794082374ae9
+- contenu du fichier next_level.txt :
+    - Host : 10.100.0.7
+    - User : josiane
+    - Pass : OLZkJEQWY6rNO9Uf
 
 ### Niveau 5: Utiliser le social engineering pour obtenir des informations et cracker un mot de passe
 

@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     openssh-server \
     nmap \
-    hashcat \
+    sudo \
     && rm -rf /var/lib/apt/lists/*
 
 # Create directory for SSH daemon
@@ -27,12 +27,6 @@ RUN usermod -aG sudo $USER
 
 # Set working directory to the user's home
 WORKDIR /home/$USER
-
-# Create challenge directories
-# Copy the files into the user's home directory
-RUN mkdir docs && chown $USER:$USER docs && chmod 700 docs
-
-RUN echo "$SECRET_KEY" > docs/secret-key.txt
 
 # Expose SSH port
 EXPOSE 22
