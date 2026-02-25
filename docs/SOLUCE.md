@@ -143,6 +143,25 @@ hashcat -m 1800 -a 0 <hash> -o cracked_passwords.txt
 # -m 1800 : spécifie le type de hash (sha512)
 ```
 
+**Décompression de l'archive:**
+```bash
+  unzip -P Tokyo2019! secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{s0c14l_h4ck_c0mpl3t3}
+- contenu du fichier key_part.txt : ce3eb117e71e238b84987169da5c5bc6da17c508108cdc568d39cf6efae6dca4
+- contenu du fichier next_level.txt :
+    - Host : 10.100.0.8
+    - User : michel
+    - Pass : AHslMhf94Rsm5rJj
+
 ### Niveau 6: Trouver la bonne séquence
 
 **WORK IN PROGRESS**

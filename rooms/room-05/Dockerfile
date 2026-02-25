@@ -7,6 +7,7 @@ ARG FLAG
 ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
+ARG SECRET_PART
 
 RUN apt-get update && apt-get install -y \
     curl \
@@ -57,6 +58,8 @@ RUN exiftool -overwrite_original \
   -GPSLatitude=35.689339 -GPSLatitudeRef=N \
   -GPSLongitude=139.692083 -GPSLongitudeRef=E \
   docs/employees/alice_martin/photo_vacances_023.jpg
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
 EXPOSE 22
 

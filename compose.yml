@@ -186,8 +186,8 @@ services:
         PASS: OLZkJEQWY6rNO9Uf
         ZIP_PASS: Tokyo2019!
         FLAG: FLAG{s0c14l_h4ck_c0mpl3t3}
-        NEXT_HOST: 10.100.6.2
-        NEXT_USER: lvl06
+        NEXT_HOST: 10.100.0.8
+        NEXT_USER: michel
         NEXT_PASS: AHslMhf94Rsm5rJj
         SECRET_PART: ce3eb117e71e238b84987169da5c5bc6da17c508108cdc568d39cf6efae6dca4
     networks:
@@ -204,8 +204,8 @@ services:
         PASS: AHslMhf94Rsm5rJj
         ZIP_PASS: ajxO7Iz9DbTxBol7
         FLAG: FLAG{kn0ck_kn0ck_wh0_5_th3r3}
-        NEXT_HOST: 10.100.7.2
-        NEXT_USER: lvl06
+        NEXT_HOST: 10.100.0.9
+        NEXT_USER: jacqueline
         NEXT_PASS: cBFxcBRyheV9AeZ9
         SECRET_PART: 1bcf6c1eabc8efba56ce84c662bf6bfc5a2af2e4d85255435b46f7a93fdf9e2a
     networks:
@@ -237,8 +237,8 @@ services:
         PASS: cBFxcBRyheV9AeZ9
         ZIP_PASS: yRv7LBte6rE4zxnY
         FLAG: FLAG{dr0p_t4bl3_dr0p_th3_m1c}
-        NEXT_HOST: 10.100.0.4
-        NEXT_USER: lvl02
+        NEXT_HOST: 10.100.0.10
+        NEXT_USER: huguette
         NEXT_PASS: LQU8PvANkAuYitkQ
         SECRET_PART: 4bd651b5622efa943d75d5c0dc7d9292d565ad16d05afeebb320dd3f1f6a9c89
     networks:
@@ -292,8 +292,8 @@ services:
         PASS: LQU8PvANkAuYitkQ
         ZIP_PASS: AMZ63JYowitEDcfq
         FLAG: FLAG{4ll_p13c35_c0m3_t0g3th3r}
-        NEXT_HOST: 10.100.0.4
-        NEXT_USER: lvl02
+        NEXT_HOST: 10.100.0.11
+        NEXT_USER: monique
         NEXT_PASS: MBjHcQ02uyXSFrmH
         SECRET_PART: 77ba815e13fd76a312b2d3372cad0de4ffc0f2dd8c857bd1ad2392d31b96039a
     networks:

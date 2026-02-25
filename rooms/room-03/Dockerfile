@@ -8,8 +8,6 @@ ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
 
-ENV PATH=$PATH:/sbin:/usr/sbin
-
 RUN apt-get update && apt-get install -y \
     curl \
     iputils-ping \
@@ -54,9 +52,6 @@ RUN mkdir dicts && chown $USER:$USER dicts && chmod 700 dicts
 COPY rooms/room-03/messages/encrypted_credentials.enc .vault/encrypted_credentials.enc
 COPY rooms/room-03/rockyou.txt dicts/rockyou.txt
 
-# Create secret-key file
-
-#RUN echo "$ZIP_PASS" > .secrets/.hidden/secret-key.txt
 
 RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
