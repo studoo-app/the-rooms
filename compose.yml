@@ -194,8 +194,8 @@ services:
       nw-tr-hub:
         ipv4_address: 10.100.0.7
 
-  room06:
-    container_name: room06
+  room-06:
+    container_name: room-06
     build:
       context: .
       dockerfile: rooms/room-06/node-01/Dockerfile
@@ -214,8 +214,8 @@ services:
       nw-tr-06:
         ipv4_address: 10.100.6.3
 
-  room06-node-01:
-    container_name: room06-node-01
+  room-06-node-01:
+    container_name: room-06-node-01
     build:
       context: .
       dockerfile: rooms/room-06/node-02/Dockerfile
@@ -227,8 +227,8 @@ services:
       nw-tr-06:
         ipv4_address: 10.100.6.4
 
-  room07:
-    container_name: room07
+  room-07:
+    container_name: room-07
     build:
       context: .
       dockerfile: rooms/room-07/node-01/Dockerfile
@@ -247,8 +247,8 @@ services:
       nw-tr-07:
         ipv4_address: 10.100.7.3
 
-  room07-web:
-    container_name: room07-web
+  room-07-web:
+    container_name: room-07-web
     build:
       context: .
       dockerfile: rooms/room-07/node-02/Dockerfile
@@ -263,8 +263,8 @@ services:
         nw-tr-07:
             ipv4_address: 10.100.7.4
 
-  room07-db:
-    container_name:  room07-db
+  room-07-db:
+    container_name:  room-07-db
     image: mariadb:11
 #    ports:
 #      - "3306:3306"
@@ -282,8 +282,8 @@ services:
         nw-tr-07:
             ipv4_address: 10.100.7.5
 
-  room08:
-    container_name: room08
+  room-08:
+    container_name: room-08
     build:
       context: .
       dockerfile: rooms/room-08/node-01/Dockerfile
@@ -302,8 +302,8 @@ services:
       nw-tr-08:
         ipv4_address: 10.100.8.2
 
-  room08-node-01:
-    container_name: room08-node-02
+  room-08-node-01:
+    container_name: room-08-node-02
     build:
       context: .
       dockerfile: rooms/room-08/node-02/Dockerfile
@@ -315,8 +315,8 @@ services:
       nw-tr-08:
         ipv4_address: 10.100.8.3
 
-  room09:
-    container_name: room09
+  room-09:
+    container_name: room-09
     build:
       context: .
       dockerfile: rooms/room-09/Dockerfile

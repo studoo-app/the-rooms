@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     zip \
     unzip \
+    nmap \
     knockd \
     && rm -rf /var/lib/apt/lists/*
 
@@ -40,6 +41,8 @@ WORKDIR /home/$USER
 
 # Copy the briefing file
 COPY rooms/room-06/node-01/niveau-06-michel.txt briefing.txt
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
 EXPOSE 22
 

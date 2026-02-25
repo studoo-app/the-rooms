@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     net-tools \
     openssh-server \
-    nmap \
     knockd \
     iptables \
     tcpdump \
@@ -40,6 +39,10 @@ RUN echo "$SECRET_KEY" > docs/secret-key.txt
 
 # Copy Challenge files
 COPY rooms/room-06/node-02/knockd.conf /etc/knockd.conf
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
+
+
 COPY rooms/room-06/node-02/start.sh /start.sh
 RUN chmod +x /start.sh
 

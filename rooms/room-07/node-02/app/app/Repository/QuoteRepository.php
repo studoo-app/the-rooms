@@ -34,7 +34,7 @@ class QuoteRepository
             );
         }
 
-        var_dump($results);
+        //var_dump($results);
 
         return $results;
     }

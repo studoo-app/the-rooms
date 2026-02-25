@@ -7,6 +7,7 @@ ARG FLAG
 ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
+ARG SECRET_PART
 
 RUN apt-get update && apt-get install -y \
     curl \
@@ -14,6 +15,8 @@ RUN apt-get update && apt-get install -y \
     net-tools \
     openssh-server \
     sudo \
+    nmap \
+    sqlmap \
     zip \
     unzip \
     && rm -rf /var/lib/apt/lists/*
@@ -39,6 +42,8 @@ WORKDIR /home/$USER
 
 # Copy the briefing file
 COPY rooms/room-07/node-01/niveau-07-jacqueline.txt briefing.txt
+
+RUN chown -R $USER:$USER /home/$USER && chmod -R 700 /home/$USER
 
 EXPOSE 22
 

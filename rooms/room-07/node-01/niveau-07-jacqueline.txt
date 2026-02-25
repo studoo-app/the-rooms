@@ -1,6 +1,6 @@
 ╔════════════════════════════════════════════════════════════════════════════╗
 ║                                                                            ║
-║         THE ROOMS CHALLENGE - NIVEAU 7 : L'INTRUSION DE JACQUELINE        ║
+║         THE ROOMS CHALLENGE - NIVEAU 7 : L'INTRUSION CHEZ JACQUELINE       ║
 ║                                                                            ║
 ╚════════════════════════════════════════════════════════════════════════════╝
 
@@ -8,7 +8,7 @@ Bienvenue dans le système de Jacqueline !
 
 Jacqueline, 68 ans, s'invite partout sans y avoir été conviée. Son site
 web perso — qu'elle a fait faire par "le fils du voisin" — contient un
-formulaire de connexion. Ce fils de voisin faisait de son mieux.
+formulaire de recherche. Ce fils de voisin faisait de son mieux.
 Ce n'était visiblement pas suffisant.
 
 Votre mission :
