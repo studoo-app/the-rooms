@@ -7,17 +7,21 @@ ARG FLAG
 ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
+ARG SECRET_PART
 
 RUN apt-get update && apt-get install -y \
+    tcpdump \
+    tshark \
+    net-tools \
     curl \
     iputils-ping \
-    net-tools \
+    nmap \
+    dnsutils \
+    iproute2 \
     openssh-server \
     sudo \
     zip \
     unzip \
-    nmap \
-    knockd \
     && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /var/run/sshd

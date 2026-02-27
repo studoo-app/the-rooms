@@ -22,16 +22,16 @@ pour déverouiller et accéder au niveau suivant.
 ## Description des niveaux
 
 | Niveau | Objectif | Compétences développées |
-|--------|--|--|
+|--------|-|--|
 | Niveau 1 | savoir explorer et détecter les dosseirs cachés | Exploration systèmes Linux |
 | Niveau 2 | Authentification SSH par clé privée | ssh avancé |
 | Niveau 3 | Détecter le / les cryptages utilisés et décoder des messages | Cryptographie |
 | Niveau 4 | Naviguer dans le labyrinthe et trouver la sortie | Exploration réseau et retro engineering de configuration SSH |
 | Niveau 5 | Utiliser le social engineering pour obtenir des informations et cracker un mot de passe | Social engineering |
-| Niveau 6 | Trouver la bonne séquence | Port knocking |
+| Niveau 6 | Espionner le traffic pour récupérer les accès au serveur | network sniffing |
 | Niveau 7 | Attaquer la base de données d'un site web | Injection sql |
 | Niveau 8 | Analyser les fichiers disponibles pour avancer |  Analyse de logs, port knocking, élevation de privilèges|
-| Niveau 9 | The End | Reconstruction de clé |
+| Niveau 9 | The End | Modification de tache cron, Reconstruction de clé |
 
 ## Démarrage et accès au Hub
 

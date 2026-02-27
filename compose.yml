@@ -203,11 +203,14 @@ services:
         USER: michel
         PASS: AHslMhf94Rsm5rJj
         ZIP_PASS: ajxO7Iz9DbTxBol7
-        FLAG: FLAG{kn0ck_kn0ck_wh0_5_th3r3}
+        FLAG: FLAG{sn1ff_l1k3_4_pr0}
         NEXT_HOST: 10.100.0.9
         NEXT_USER: jacqueline
         NEXT_PASS: cBFxcBRyheV9AeZ9
         SECRET_PART: 1bcf6c1eabc8efba56ce84c662bf6bfc5a2af2e4d85255435b46f7a93fdf9e2a
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.8
@@ -220,12 +223,43 @@ services:
       context: .
       dockerfile: rooms/room-06/node-02/Dockerfile
       args:
-        USER: ginette
-        PASS: AHslMhf94Rsm5rJj
+        FTP_USER: boris
+        FTP_PASS: tgVDEFzrN0lLMS18
         SECRET_KEY: ajxO7Iz9DbTxBol7
     networks:
       nw-tr-06:
         ipv4_address: 10.100.6.4
+
+  room-06-node-02:
+    container_name: room-06-node-02
+    build:
+      context: .
+      dockerfile: rooms/room-06/node-03/Dockerfile
+      args:
+        FTP_USER: boris
+        FTP_PASS: tgVDEFzrN0lLMS18
+        SECRET_KEY: ajxO7Iz9DbTxBol7
+    networks:
+      nw-tr-06:
+        ipv4_address: 10.100.6.5
+    depends_on:
+      - room-06-node-01
+    environment:
+      FTP_USER: boris
+      FTP_PASS: tgVDEFzrN0lLMS18
+
+#  room-06-node-01:
+#    container_name: room-06-node-01
+#    build:
+#      context: .
+#      dockerfile: rooms/room-06/node-02/Dockerfile
+#      args:
+#        USER: ginette
+#        PASS: AHslMhf94Rsm5rJj
+#        SECRET_KEY: ajxO7Iz9DbTxBol7
+#    networks:
+#      nw-tr-06:
+#        ipv4_address: 10.100.6.4
 
   room-07:
     container_name: room-07
