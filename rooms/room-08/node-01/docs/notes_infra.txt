@@ -1,0 +1,33 @@
+Infrastructure salle B - notes Robert
+derniere maj : 18/11/2024
+
+--- SERVEURS ACTIFS ---
+
+r08 : 10.100.8.2  (celui-ci)
+r09 : 10.100.8.3  acces restreint, port knocking actif
+
+--- ACCES r09 ---
+
+Port knocking configure par mes soins.
+La sequence est en 5 temps, voir serveurs_reseau.txt pour le detail complet.
+
+Depuis r08 :
+  apt install knockd
+  knock 10.100.8.3 <sequence>
+  sleep 2
+  ssh -i /home/huguette/.ssh/id_rsa colette@10.100.8.3
+
+J ai teste, ca marche. Laisser au moins 2 secondes entre le knock et le ssh.
+En cas de raté attendre 30 secondes et recommencer depuis le debut.
+
+--- UTILISATEURS r08 ---
+
+root    : acces complet
+huguette: acces limité, sudo restreint
+          la cle ssh pour r09 est dans /home/huguette/.ssh/id_rsa
+          elle a besoin d acces r09, lui dire de regarder mes docs dans /root/docs/
+
+--- DIVERS ---
+
+backup iptables : /root/iptables_backup.rules
+cron backup     : tous les lundis 3h du matin vers /srv/backups/

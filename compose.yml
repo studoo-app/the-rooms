@@ -291,7 +291,7 @@ services:
         USER: huguette
         PASS: LQU8PvANkAuYitkQ
         ZIP_PASS: AMZ63JYowitEDcfq
-        FLAG: FLAG{4ll_p13c35_c0m3_t0g3th3r}
+        FLAG: FLAG{sudo_m1sc0nf1g_ruined_my_day}
         NEXT_HOST: 10.100.0.11
         NEXT_USER: monique
         NEXT_PASS: MBjHcQ02uyXSFrmH
@@ -303,14 +303,16 @@ services:
         ipv4_address: 10.100.8.2
 
   room-08-node-01:
-    container_name: room-08-node-02
+    container_name: room-08-node-01
     build:
       context: .
       dockerfile: rooms/room-08/node-02/Dockerfile
       args:
         USER: colette
         PASS: password
-        SECRET_KEY: AMZ63JYowitEDcf
+        SECRET_KEY: AMZ63JYowitEDcfq
+    cap_add:
+      - NET_ADMIN
     networks:
       nw-tr-08:
         ipv4_address: 10.100.8.3

