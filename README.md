@@ -30,7 +30,7 @@ pour déverouiller et accéder au niveau suivant.
 | Niveau 5 | Utiliser le social engineering pour obtenir des informations et cracker un mot de passe | Social engineering |
 | Niveau 6 | Trouver la bonne séquence | Port knocking |
 | Niveau 7 | Attaquer la base de données d'un site web | Injection sql |
-| Niveau 8 | Fragment Hunt | Exploration réseau, cryptographie, changement de port, port knocking, social engineering|
+| Niveau 8 | Analyser les fichiers disponibles pour avancer |  Analyse de logs, port knocking, élevation de privilèges|
 | Niveau 9 | The End | Reconstruction de clé |
 
 ## Démarrage et accès au Hub
