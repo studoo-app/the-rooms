@@ -217,6 +217,25 @@ services:
       nw-tr-06:
         ipv4_address: 10.100.6.3
 
+  #routeur
+  room-06-node-00:
+    container_name: room-06-node-00
+    build:
+      context: .
+      dockerfile: rooms/room-06/node-00/Dockerfile
+      args:
+        USER: germaine
+        PASS: password
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.ip_forward: "1"
+    networks:
+      nw-tr-06:
+        ipv4_address: 10.100.6.6
+      nw-tr-06-2:
+        ipv4_address: 10.100.16.6
+
   room-06-node-01:
     container_name: room-06-node-01
     build:
@@ -227,8 +246,9 @@ services:
         FTP_PASS: tgVDEFzrN0lLMS18
         SECRET_KEY: ajxO7Iz9DbTxBol7
     networks:
-      nw-tr-06:
-        ipv4_address: 10.100.6.4
+      nw-tr-06-2:
+        ipv4_address: 10.100.16.4
+
 
   room-06-node-02:
     container_name: room-06-node-02
@@ -238,7 +258,7 @@ services:
       args:
         FTP_USER: boris
         FTP_PASS: tgVDEFzrN0lLMS18
-        SECRET_KEY: ajxO7Iz9DbTxBol7
+        FTP_HOST: room-06-node-01
     networks:
       nw-tr-06:
         ipv4_address: 10.100.6.5
@@ -392,8 +412,9 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.100.6.0/29
-          gateway: 10.100.6.1
+        - subnet: 10.100.6.0/26
+          #gateway: 10.100.6.1
+          gateway: 10.100.6.30
 
   nw-tr-07:
     driver: bridge
@@ -408,3 +429,10 @@ networks:
       config:
         - subnet: 10.100.8.0/26
           gateway: 10.100.8.1
+
+  nw-tr-06-2:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.16.0/26
+          gateway: 10.100.16.30
