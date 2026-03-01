@@ -225,7 +225,7 @@ services:
       - "8001:80"
     environment:
       - SERVER_NAME=:80
-      - APP_ENV=dev
+      #- APP_ENV=dev
     networks:
         nw-tr-07:
             ipv4_address: 10.100.7.4
