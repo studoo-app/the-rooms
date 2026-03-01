@@ -1,0 +1,84 @@
+last
+w
+uptime
+uname -a
+hostname
+cat /etc/os-release
+ip a
+ip route
+cat /etc/hosts
+cat /etc/resolv.conf
+ping -c 4 8.8.8.8
+ping -c 3 10.100.8.3
+apt update
+apt upgrade -y
+apt autoremove -y
+df -h
+du -sh /var/log/*
+free -h
+ps aux
+systemctl list-units --type=service --state=running
+tail -n 100 /var/log/syslog
+tail -n 100 /var/log/auth.log
+journalctl -xe
+journalctl -u ssh
+systemctl status ssh
+ss -tlnp
+ss -anp | grep ESTABLISHED
+netstat -rn
+arp -a
+nmap -sP 10.100.8.0/24
+nmap -p 22 10.100.8.3
+nmap -p 22,80,443,8080 10.100.8.3
+traceroute 10.100.8.3
+apt install knockd -y
+which knock
+man knock
+cat /etc/knockd.conf
+knock 10.100.8.3 1789 3615 4242 7331 9999
+sleep 2
+ssh -i /home/huguette/.ssh/id_rsa colette@10.100.8.3
+exit
+ls /root
+ls -la /root
+ls /root/docs
+cat /root/docs/notes_infra.txt
+cat /root/docs/serveurs_reseau.txt
+cat /etc/passwd | grep huguette
+cat /etc/group
+id huguette
+chage -l huguette
+ls /home
+ls -la /home/huguette
+ls /home/huguette/.ssh
+tail -n 50 /var/log/auth.log
+cat /var/log/auth.log | grep huguette
+cat /var/log/auth.log | grep "Failed password"
+cat /var/log/auth.log | grep "Accepted"
+iptables -L -n -v
+iptables -L INPUT -n
+iptables-save > /root/iptables_backup.rules
+apt install net-tools -y
+apt install nmap -y
+apt install curl -y
+curl -I http://10.100.8.3
+ping -c 2 10.100.8.3
+crontab -l
+crontab -e
+cat /etc/crontab
+ls /etc/cron.d/
+tar -czf /root/backup_etc.tar.gz /etc
+ls -lh /root/backup_etc.tar.gz
+sha256sum /root/backup_etc.tar.gz
+mv /root/backup_etc.tar.gz /srv/backups/
+ls /srv/backups/
+vmstat
+top -bn1 | head -20
+ps aux | grep ssh
+cat /root/docs/serveurs_reseau.txt
+cat /root/docs/notes_infra.txt
+who
+w
+last | head -20
+clear
+exit

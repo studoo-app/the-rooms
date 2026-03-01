@@ -1,0 +1,47 @@
+ls
+ls -la
+cd docs
+ls -la
+cat todo.txt
+cat notes_perso.txt
+cd ..
+pwd
+whoami
+id
+groups
+hostname
+ip a
+ip route
+cat /etc/hosts
+ping -c 2 10.100.8.1
+ping -c 2 10.100.8.3
+nmap -p 22 10.100.8.3
+ssh colette@10.100.8.3
+ls /root
+sudo ls /root
+sudo ls /root/docs
+sudo cat /root/docs/notes_infra.txt
+sudo cat /root/docs/serveurs_reseau.txt
+which knock
+sudo apt install knockd
+man knock
+knock --help
+cd docs
+cat notes_perso.txt
+cat todo.txt
+nano todo.txt
+cat todo.txt
+cd ..
+ls -la .ssh
+cat .ssh/id_rsa
+sudo cat /root/docs/notes_infra.txt
+sudo cat /root/docs/serveurs_reseau.txt
+grep -r "knock" /home/huguette/
+grep -r "port" /home/huguette/docs/
+ping -c 1 10.100.8.3
+nmap -p 22 10.100.8.3
+ls
+cat docs/notes_perso.txt
+history
+clear
+exit

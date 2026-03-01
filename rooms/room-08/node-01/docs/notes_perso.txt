@@ -1,0 +1,16 @@
+mdp webmail      : Huguette2024!
+mdp wifi bureau  : Salle_B_Wifi#3
+
+--- serveur r09 ---
+
+Robert dit que le port 22 est bloque par defaut sur r09.
+Il faut faire un "port knocking" avant de se connecter en ssh.
+J ai essaye plusieurs fois sans savoir la sequence, ca marche pas.
+
+Robert a note la sequence quelque part dans ses fichiers sous /root/docs/
+Il m a dit que je pouvais y acceder avec sudo cat.
+
+Le compte pour se connecter a r09 c est colette.
+Ma cle ssh pour r09 est dans /home/huguette/.ssh/id_rsa
+
+Faudra que je pense a lui demander de me donner la sequence proprement.

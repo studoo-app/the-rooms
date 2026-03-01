@@ -1,0 +1,6 @@
+[x] installer nmap sur r08
+[x] tester ping vers 10.100.8.3
+[x] verifier que ma cle ssh est bien dans .ssh/id_rsa
+[ ] recuperer la sequence de knock aupres de Robert (voir /root/docs/)
+[ ] tester connexion : ssh -i .ssh/id_rsa colette@10.100.8.3
+[ ] rapport infra a rendre vendredi avant 17h

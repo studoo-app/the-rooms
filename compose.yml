@@ -1,0 +1,336 @@
+services:
+
+  room-00:
+    container_name: room-00
+    build:
+      context: .
+      dockerfile: hub/Dockerfile
+      args:
+        USER: challenger
+        PASS: welcome
+    ports:
+      - "2200:22"
+    networks:
+        nw-tr-hub:
+            ipv4_address: 10.100.0.2
+
+  room-01:
+    container_name: room-01
+    build:
+      context: .
+      dockerfile: rooms/room-01/Dockerfile
+      args:
+        USER: gilbert
+        PASS: Y2hZbdUmtAPF4Ft0
+        ZIP_PASS: 9VOsfCMsHhAiIohU
+        FLAG: FLAG{h1dd3n_1n_pl41n_s1ght}
+        NEXT_HOST: 10.100.0.4
+        NEXT_USER: roger
+        NEXT_PASS: LQU8PvANkAuYitkQ
+        SECRET_PART: 2004d30b5bf80c80b70fa660d35236cf036e9a12cb538c381a6ca42531
+    networks:
+        nw-tr-hub:
+            ipv4_address: 10.100.0.3
+
+  room-02:
+    container_name: room-02
+    build:
+      context: .
+      dockerfile: rooms/room-02/node-01/Dockerfile
+      args:
+        USER: roger
+        PASS: LQU8PvANkAuYitkQ
+        ZIP_PASS: UDc4kyqHxurVDnYt
+        FLAG: FLAG{pr1v4t3_k3y_unl0ck3d}
+        NEXT_HOST: 10.100.0.5
+        NEXT_USER: bernard
+        NEXT_PASS: gLCGN9pvWG1EY7MR
+        SECRET_PART: 56be19ce1cb509ba7aed832808c32eaefbc03bcae0e648c80f632df5a2
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.4
+      nw-tr-02:
+        ipv4_address: 10.100.2.3
+
+  room-02-node-02:
+    container_name: room-02-node-02
+    build:
+      context: .
+      dockerfile: rooms/room-02/node-02/Dockerfile
+      args:
+        USER: yvette
+        PASS: node-02-pass
+        SECRET_KEY: UDc4kyqHxurVDnYt
+    networks:
+      nw-tr-02:
+        ipv4_address: 10.100.2.4
+
+  room-03:
+    container_name: room-03
+    build:
+      context: .
+      dockerfile: rooms/room-03/Dockerfile
+      args:
+        USER: bernard
+        PASS: gLCGN9pvWG1EY7MR
+        ZIP_PASS: a3to1NNUGu84xTv5
+        FLAG: FLAG{3ncrypt10n_15_n0t_s3cur1ty}
+        NEXT_HOST: 10.100.0.6
+        NEXT_USER: gerard
+        NEXT_PASS: AHslMhf94Rsm5rJj
+        SECRET_PART: 3f029476da49ed23e7df325728817e34204a56b80da3403d3b5f67dd31
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.5
+
+  room-04:
+    container_name: room-04
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-00/Dockerfile
+      args:
+        USER: gerard
+        PASS: AHslMhf94Rsm5rJj
+        ZIP_PASS: rtCR0iSQKclZrLUA
+        FLAG: FLAG{pr0xy_jump_m4st3r}
+        NEXT_HOST: 10.100.0.7
+        NEXT_USER: josiane
+        NEXT_PASS: OLZkJEQWY6rNO9Uf
+        SECRET_PART: 505fd43db1caeefd8413ffd4e6524589643cc706132a9b9443dc3c351a
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.6
+      nw-tr-04:
+        ipv4_address: 10.100.4.17
+
+  room-04-node-01:
+    container_name: room-04-node-01
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-01/Dockerfile
+      args:
+        USER: rene
+        PASS: oamgPLpLCm7J
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.23
+
+  room-04-node-02:
+    container_name: room-04-node-02
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-02/Dockerfile
+      args:
+        USER: fernand
+        PASS: fCq7pAMedfs5
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.16
+
+  room-04-node-03:
+    container_name: room-04-node-03
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-03/Dockerfile
+      args:
+        USER: gaston
+        PASS: 8zVlPa95ujNx
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.31
+
+  room-04-node-04:
+    container_name: room-04-node-04
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-04/Dockerfile
+      args:
+        USER: raymond
+        PASS: xMeS1ZB7Zymt
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.21
+
+  room-04-node-05:
+    container_name: room-04-node-05
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-05/Dockerfile
+      args:
+        USER: maurice
+        PASS: qNaaGZhM6mZ0
+        SECRET_KEY: rtCR0iSQKclZrLUA
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.37
+
+  room-04-node-06:
+    container_name: room-04-node-06
+    build:
+      context: .
+      dockerfile: rooms/room-04/node-06/Dockerfile
+      args:
+        USER: lucette
+        PASS: ijL73e5eHxvh
+    networks:
+      nw-tr-04:
+        ipv4_address: 10.100.4.42
+
+  room-05:
+    container_name: room-05
+    build:
+      context: .
+      dockerfile: rooms/room-05/Dockerfile
+      args:
+        USER: josiane
+        PASS: OLZkJEQWY6rNO9Uf
+        ZIP_PASS: Tokyo2019!
+        FLAG: FLAG{s0c14l_h4ck_c0mpl3t3}
+        NEXT_HOST: 10.100.0.9
+        NEXT_USER: jacqueline
+        NEXT_PASS: cBFxcBRyheV9AeZ9
+        SECRET_PART: 72944cb22bc3a3478b10409ee2048e1ab72773608b9cf0dcc6d410fe5e
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.7
+
+  room-07:
+    container_name: room-07
+    build:
+      context: .
+      dockerfile: rooms/room-07/node-01/Dockerfile
+      args:
+        USER: jacqueline
+        PASS: cBFxcBRyheV9AeZ9
+        ZIP_PASS: yRv7LBte6rE4zxnY
+        FLAG: FLAG{dr0p_t4bl3_dr0p_th3_m1c}
+        NEXT_HOST: 10.100.0.10
+        NEXT_USER: huguette
+        NEXT_PASS: LQU8PvANkAuYitkQ
+        SECRET_PART: 71c9a180f2837390eca626ac3134bef6dea4c911158343204b77c74ffe
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.9
+      nw-tr-07:
+        ipv4_address: 10.100.7.3
+
+  room-07-web:
+    container_name: room-07-web
+    build:
+      context: .
+      dockerfile: rooms/room-07/node-02/Dockerfile
+    volumes:
+      - ./rooms/room-07/node-02/app:/app
+    ports:
+      - "8001:80"
+    environment:
+      - SERVER_NAME=:80
+      - APP_ENV=dev
+    networks:
+        nw-tr-07:
+            ipv4_address: 10.100.7.4
+
+  room-07-db:
+    container_name:  room-07-db
+    image: mariadb:11
+#    ports:
+#      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: app_db
+      MYSQL_ROOT_PASSWORD: studoo
+      #MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      #MYSQL_USER: app_db_user
+      #MYSQL_PASSWORD: app_db_password
+    volumes:
+      - ./rooms/room-07/node-03/var/dbdata:/var/lib/mysql
+      - ./rooms/room-07/node-03/docs/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+        nw-tr-07:
+            ipv4_address: 10.100.7.5
+
+  room-08:
+    container_name: room-08
+    build:
+      context: .
+      dockerfile: rooms/room-08/node-01/Dockerfile
+      args:
+        USER: huguette
+        PASS: LQU8PvANkAuYitkQ
+        ZIP_PASS: AMZ63JYowitEDcfq
+        FLAG: FLAG{sudo_m1sc0nf1g_ruined_my_day}
+        NEXT_HOST: 10.100.0.11
+        NEXT_USER: monique
+        NEXT_PASS: MBjHcQ02uyXSFrmH
+        SECRET_PART: 33aadef362bd9fb690c880386789e1af027233ffe5fabed372b1a2b5c1
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.10
+      nw-tr-08:
+        ipv4_address: 10.100.8.2
+
+  room-08-node-01:
+    container_name: room-08-node-01
+    build:
+      context: .
+      dockerfile: rooms/room-08/node-02/Dockerfile
+      args:
+        USER: colette
+        PASS: password
+        SECRET_KEY: AMZ63JYowitEDcfq
+    cap_add:
+      - NET_ADMIN
+    networks:
+      nw-tr-08:
+        ipv4_address: 10.100.8.3
+
+  room-09:
+    container_name: room-09
+    build:
+      context: .
+      dockerfile: rooms/room-09/Dockerfile
+      args:
+        USER: monique
+        PASS: MBjHcQ02uyXSFrmH
+        FLAG: FLAG{Y0u_c0nqu3r3d_th3_r00ms}
+    networks:
+      nw-tr-hub:
+        ipv4_address: 10.100.0.11
+
+
+################################################
+networks:
+  nw-tr-hub:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.0.0/28
+          gateway: 10.100.0.1
+
+  nw-tr-02:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.2.0/29
+          gateway: 10.100.2.1
+
+  nw-tr-04:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.4.0/26
+          gateway: 10.100.4.1
+
+  nw-tr-07:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.7.0/29
+          gateway: 10.100.7.1
+
+  nw-tr-08:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.100.8.0/26
+          gateway: 10.100.8.1

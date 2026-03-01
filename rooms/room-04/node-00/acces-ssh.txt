@@ -1,0 +1,22 @@
+═══════════════════════════════════════════════
+        THE ROOMS  —  NIVEAU 4
+        Access SSH des Nodes
+═══════════════════════════════════════════════
+
+Node 01:
+rene / oamgPLpLCm7J
+
+Node 02:
+fernand / fCq7pAMedfs5
+
+Node 03:
+gaston / 8zVlPa95ujNx
+
+Node 04:
+raymond / xMeS1ZB7Zymt
+
+Node 05 :
+maurice / qNaaGZhM6mZ0
+
+Node 06:
+lucette / ijL73e5eHxvh
