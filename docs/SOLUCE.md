@@ -25,7 +25,7 @@
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{h1dd3n_1n_pl41n_s1ght}
-- contenu du fichier key_part.txt : 7205137a8b8327274b49e063e94e91f95ae085728772c57e12decf1549dff6dc
+- contenu du fichier key_part.txt : 2004d30b5bf80c80b70fa660d35236cf036e9a12cb538c381a6ca42531
 - contenu du fichier next_level.txt : 
   - Host : 10.100.0.4 
   - User : roger 
@@ -58,7 +58,7 @@ ssh -i key_rsa yvette@10.100.2.4
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{pr1v4t3_k3y_unl0ck3d}
-- contenu du fichier key_part.txt : fe61fe7b7f73810ae1c425368800ee29452da9b4368bb87b78cbb9c1307b6b67
+- contenu du fichier key_part.txt : 56be19ce1cb509ba7aed832808c32eaefbc03bcae0e648c80f632df5a2
 - contenu du fichier next_level.txt :
     - Host : 10.100.0.5
     - User : bernard
@@ -88,7 +88,7 @@ ssh -i key_rsa yvette@10.100.2.4
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{3ncrypt10n_15_n0t_s3cur1ty}
-- contenu du fichier key_part.txt : 788d1b27411e1a09a54530f62516930719178621f993c9b0cb8c77e7fbec7d8e
+- contenu du fichier key_part.txt : 3f029476da49ed23e7df325728817e34204a56b80da3403d3b5f67dd31
 - contenu du fichier next_level.txt :
     - Host : 10.100.0.6
     - User : gerard
@@ -118,7 +118,7 @@ ssh -i key_rsa yvette@10.100.2.4
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{pr0xy_jump_m4st3r}
-- contenu du fichier key_part.txt : 9eed1b9a30452d215a2809232c05cf7234178fb1d016c447b66b794082374ae9
+- contenu du fichier key_part.txt : 505fd43db1caeefd8413ffd4e6524589643cc706132a9b9443dc3c351a
 - contenu du fichier next_level.txt :
     - Host : 10.100.0.7
     - User : josiane
@@ -156,17 +156,16 @@ hashcat -m 1800 -a 0 <hash> -o cracked_passwords.txt
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{s0c14l_h4ck_c0mpl3t3}
-- contenu du fichier key_part.txt : ce3eb117e71e238b84987169da5c5bc6da17c508108cdc568d39cf6efae6dca4
+- contenu du fichier key_part.txt : 72944cb22bc3a3478b10409ee2048e1ab72773608b9cf0dcc6d410fe5e
 - contenu du fichier next_level.txt :
-    - Host : 10.100.0.8
-    - User : michel
-    - Pass : AHslMhf94Rsm5rJj
+    - Host : 10.100.0.9
+    - User : jacqueline
+    - Pass : cBFxcBRyheV9AeZ9
 
 ### Niveau 6: Trouver la bonne séquence
 
 **WORK IN PROGRESS**
-
-Auditer le fichier history des commandes bash pour trouver la séquence de port knocking permettant d'ouvrir le port ssh et se connecter à la machine suivante
+**Niveau supprimé de la version 1**
 
 ### Niveau 7: Attaquer la base de données d'un site web
 
@@ -214,7 +213,7 @@ sqlmap -u "http://localhost/api/search.php?id=1" -D recettes_db -T recettes --du
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{s0c14l_h4ck_c0mpl3t3}
-- contenu du fichier key_part.txt : 4bd651b5622efa943d75d5c0dc7d9292d565ad16d05afeebb320dd3f1f6a9c89
+- contenu du fichier key_part.txt : 71c9a180f2837390eca626ac3134bef6dea4c911158343204b77c74ffe
 - contenu du fichier next_level.txt :
     - Host : 10.100.0.10
     - User : huguette
@@ -262,7 +261,7 @@ La commande find permet en mode sudo de copier des fichiers depuis root vers le 
 #### Infos à récupérer pour le niveau suivant:
 
 - Flag : FLAG{sud0_m1sc0nf1g_ru1n3d_my_d4y}
-- contenu du fichier key_part.txt : 77ba815e13fd76a312b2d3372cad0de4ffc0f2dd8c857bd1ad2392d31b96039a
+- contenu du fichier key_part.txt : 33aadef362bd9fb690c880386789e1af027233ffe5fabed372b1a2b5c1
 - contenu du fichier next_level.txt :
     - Host : 10.100.0.11
     - User : monique

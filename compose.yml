@@ -27,7 +27,7 @@ services:
         NEXT_HOST: 10.100.0.4
         NEXT_USER: roger
         NEXT_PASS: LQU8PvANkAuYitkQ
-        SECRET_PART: 7205137a8b8327274b49e063e94e91f95ae085728772c57e12decf1549dff6dc
+        SECRET_PART: 2004d30b5bf80c80b70fa660d35236cf036e9a12cb538c381a6ca42531
     networks:
         nw-tr-hub:
             ipv4_address: 10.100.0.3
@@ -45,7 +45,7 @@ services:
         NEXT_HOST: 10.100.0.5
         NEXT_USER: bernard
         NEXT_PASS: gLCGN9pvWG1EY7MR
-        SECRET_PART: fe61fe7b7f73810ae1c425368800ee29452da9b4368bb87b78cbb9c1307b6b67
+        SECRET_PART: 56be19ce1cb509ba7aed832808c32eaefbc03bcae0e648c80f632df5a2
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.4
@@ -78,7 +78,7 @@ services:
         NEXT_HOST: 10.100.0.6
         NEXT_USER: gerard
         NEXT_PASS: AHslMhf94Rsm5rJj
-        SECRET_PART: 788d1b27411e1a09a54530f62516930719178621f993c9b0cb8c77e7fbec7d8e
+        SECRET_PART: 3f029476da49ed23e7df325728817e34204a56b80da3403d3b5f67dd31
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.5
@@ -96,7 +96,7 @@ services:
         NEXT_HOST: 10.100.0.7
         NEXT_USER: josiane
         NEXT_PASS: OLZkJEQWY6rNO9Uf
-        SECRET_PART: 9eed1b9a30452d215a2809232c05cf7234178fb1d016c447b66b794082374ae9
+        SECRET_PART: 505fd43db1caeefd8413ffd4e6524589643cc706132a9b9443dc3c351a
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.6
@@ -186,100 +186,13 @@ services:
         PASS: OLZkJEQWY6rNO9Uf
         ZIP_PASS: Tokyo2019!
         FLAG: FLAG{s0c14l_h4ck_c0mpl3t3}
-        NEXT_HOST: 10.100.0.8
-        NEXT_USER: michel
-        NEXT_PASS: AHslMhf94Rsm5rJj
-        SECRET_PART: ce3eb117e71e238b84987169da5c5bc6da17c508108cdc568d39cf6efae6dca4
-    networks:
-      nw-tr-hub:
-        ipv4_address: 10.100.0.7
-
-  room-06:
-    container_name: room-06
-    build:
-      context: .
-      dockerfile: rooms/room-06/node-01/Dockerfile
-      args:
-        USER: michel
-        PASS: AHslMhf94Rsm5rJj
-        ZIP_PASS: ajxO7Iz9DbTxBol7
-        FLAG: FLAG{sn1ff_l1k3_4_pr0}
         NEXT_HOST: 10.100.0.9
         NEXT_USER: jacqueline
         NEXT_PASS: cBFxcBRyheV9AeZ9
-        SECRET_PART: 1bcf6c1eabc8efba56ce84c662bf6bfc5a2af2e4d85255435b46f7a93fdf9e2a
-    cap_add:
-      - NET_ADMIN
-      - NET_RAW
+        SECRET_PART: 72944cb22bc3a3478b10409ee2048e1ab72773608b9cf0dcc6d410fe5e
     networks:
       nw-tr-hub:
-        ipv4_address: 10.100.0.8
-      nw-tr-06:
-        ipv4_address: 10.100.6.3
-
-  #routeur
-  room-06-node-00:
-    container_name: room-06-node-00
-    build:
-      context: .
-      dockerfile: rooms/room-06/node-00/Dockerfile
-      args:
-        USER: germaine
-        PASS: password
-    cap_add:
-      - NET_ADMIN
-    sysctls:
-      net.ipv4.ip_forward: "1"
-    networks:
-      nw-tr-06:
-        ipv4_address: 10.100.6.6
-      nw-tr-06-2:
-        ipv4_address: 10.100.16.6
-
-  room-06-node-01:
-    container_name: room-06-node-01
-    build:
-      context: .
-      dockerfile: rooms/room-06/node-02/Dockerfile
-      args:
-        FTP_USER: boris
-        FTP_PASS: tgVDEFzrN0lLMS18
-        SECRET_KEY: ajxO7Iz9DbTxBol7
-    networks:
-      nw-tr-06-2:
-        ipv4_address: 10.100.16.4
-
-
-  room-06-node-02:
-    container_name: room-06-node-02
-    build:
-      context: .
-      dockerfile: rooms/room-06/node-03/Dockerfile
-      args:
-        FTP_USER: boris
-        FTP_PASS: tgVDEFzrN0lLMS18
-        FTP_HOST: room-06-node-01
-    networks:
-      nw-tr-06:
-        ipv4_address: 10.100.6.5
-    depends_on:
-      - room-06-node-01
-    environment:
-      FTP_USER: boris
-      FTP_PASS: tgVDEFzrN0lLMS18
-
-#  room-06-node-01:
-#    container_name: room-06-node-01
-#    build:
-#      context: .
-#      dockerfile: rooms/room-06/node-02/Dockerfile
-#      args:
-#        USER: ginette
-#        PASS: AHslMhf94Rsm5rJj
-#        SECRET_KEY: ajxO7Iz9DbTxBol7
-#    networks:
-#      nw-tr-06:
-#        ipv4_address: 10.100.6.4
+        ipv4_address: 10.100.0.7
 
   room-07:
     container_name: room-07
@@ -294,7 +207,7 @@ services:
         NEXT_HOST: 10.100.0.10
         NEXT_USER: huguette
         NEXT_PASS: LQU8PvANkAuYitkQ
-        SECRET_PART: 4bd651b5622efa943d75d5c0dc7d9292d565ad16d05afeebb320dd3f1f6a9c89
+        SECRET_PART: 71c9a180f2837390eca626ac3134bef6dea4c911158343204b77c74ffe
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.9
@@ -349,7 +262,7 @@ services:
         NEXT_HOST: 10.100.0.11
         NEXT_USER: monique
         NEXT_PASS: MBjHcQ02uyXSFrmH
-        SECRET_PART: 77ba815e13fd76a312b2d3372cad0de4ffc0f2dd8c857bd1ad2392d31b96039a
+        SECRET_PART: 33aadef362bd9fb690c880386789e1af027233ffe5fabed372b1a2b5c1
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.10
@@ -379,7 +292,7 @@ services:
       args:
         USER: monique
         PASS: MBjHcQ02uyXSFrmH
-        FLAG: FLAG{th3_r00ms_c0nqu3r3d}
+        FLAG: FLAG{Y0u_c0nqu3r3d_th3_r00ms}
     networks:
       nw-tr-hub:
         ipv4_address: 10.100.0.11
@@ -407,13 +320,6 @@ networks:
       config:
         - subnet: 10.100.4.0/26
           gateway: 10.100.4.1
-
-  nw-tr-06:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.100.6.0/26
-          gateway: 10.100.6.1
 
   nw-tr-07:
     driver: bridge
