@@ -1,0 +1,16 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              THE ROOMS CHALLENGE - NIVEAU 2 : ROGER                       ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Vous venez d'accéder au système de roger.
+
+Le code de déverrouillage de l'archive ne se trouve pas ici.
+Une autre machine sur ce réseau le détient.
+Encore faut-il pouvoir s'y connecter.
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  Bonne chance.                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝

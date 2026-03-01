@@ -1,0 +1,16 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              THE ROOMS CHALLENGE - NIVEAU 9 : MONIQUE                     ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Vous venez d'accéder au système de monique.
+
+Vous avez traversé huit niveaux.
+Vous avez collecté ce qu'il fallait collecter.
+Il ne reste plus qu'à assembler les pièces.
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  C'est la fin.                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝

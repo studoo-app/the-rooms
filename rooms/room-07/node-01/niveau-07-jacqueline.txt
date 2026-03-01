@@ -1,0 +1,16 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              THE ROOMS CHALLENGE - NIVEAU 7 : JACQUELINE                  ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Vous venez d'accéder au système de jacqueline.
+
+Ce système héberge une application accessible sur le réseau.
+Cette application interagit avec des données.
+Elle n'a pas été conçue pour résister à un œil attentif.
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  Bonne chance.                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝

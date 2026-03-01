@@ -1,0 +1,16 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              THE ROOMS CHALLENGE - NIVEAU 1 : GILBERT                     ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Vous venez d'accéder au système de gilbert.
+
+Ce système contient une archive protégée.
+Le code pour l'ouvrir est quelque part sur cette machine.
+Certains fichiers sont plus discrets que d'autres.
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  Bonne chance.                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝

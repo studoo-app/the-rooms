@@ -1,0 +1,16 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║              THE ROOMS CHALLENGE - NIVEAU 3 : BERNARD                     ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Vous venez d'accéder au système de bernard.
+
+Les fichiers sont là. Le contenu, lui, n'est pas en clair.
+Il vous faudra comprendre ce qui a été fait aux données
+avant de pouvoir en faire quelque chose d'utile.
+
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║  Bonne chance.                                                             ║
+╚════════════════════════════════════════════════════════════════════════════╝
