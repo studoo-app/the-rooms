@@ -7,6 +7,7 @@ ARG FLAG
 ARG NEXT_HOST=""
 ARG NEXT_USER=""
 ARG NEXT_PASS=""
+ARG SECRET_PART
 
 RUN apt-get update && apt-get install -y \
     curl \

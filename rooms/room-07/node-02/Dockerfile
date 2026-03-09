@@ -33,7 +33,7 @@ RUN chown -R www-data:www-data /app && \
 WORKDIR /app
 
 ## Copie du fichier .env.example pour créer le fichier .env
-RUN cp .env.example .env
+RUN cp /app/.env.example /app/.env
 
 ## Installation des dépendances Symfony (à décommenter si besoin)
 RUN composer install --no-interaction --optimize-autoloader
