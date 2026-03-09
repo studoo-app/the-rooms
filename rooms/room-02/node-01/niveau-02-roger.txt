@@ -7,7 +7,7 @@
 Vous venez d'accéder au système de roger.
 
 Le code de déverrouillage de l'archive ne se trouve pas ici.
-Une autre machine sur ce réseau le détient.
+Une autre machine sur ce réseau le détient et yvette en est l'utilisatrice.
 Encore faut-il pouvoir s'y connecter.
 
 
