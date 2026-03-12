@@ -51,3 +51,10 @@ Sur le serveur hôte, lancez la commande suivante pour démarrer les containers 
     # Password : welcome
 ```
 
+### Hotfix du démarrage du niveau 7
+ Passer la commande suivante afin de generer le .env et installer les dépendances de l'app web du niveau 7
+
+```bash
+    docker exec -it <id_du_container room-07-web> cp .env.example .env && composer install
+```
+Le site web est accessible sur le port `8001`de l'hôte si nécessaire
