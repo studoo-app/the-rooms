@@ -34,6 +34,8 @@
 
 ### Niveau 2: Authentification SSH par clé privée
 
+- Le fichier breifing.txt contient une info concernant le nom d'utilisateur à utiliser pour se connecer à la machine contenant le secret-key.txt, il s'agit de yvette
+- Il faut découvrir que la machine à 2 interfaces réseau, scanner le reseau en 10.100.2.0 pour décourvir une machien accesssible
 - lister les fichiers et dossiers cachés avec `ls -la`
 - trouver le dossier caché `.confidential/.hidden` et accéder à son contenu
 - trouver le fichier `key_rsa` et l'utiliser pour se connecter en SSH au niveau suivant
@@ -71,7 +73,7 @@ ssh -i key_rsa yvette@10.100.2.4
 - trouver le dossier caché `.vault` et accéder à son contenu
 - Le fichier `encrypted_message` contient un message chiffré, il faut détecter le type de chiffrement utilisé le déchiffrer
 - Etape 1 : Décoder le message qui en est encodé en base64
-- Etape 2 : reperer le param password dans la chaine obtenu, ainsi que le param algo
+- Etape 2 : repérer le param password dans la chaine obtenu, ainsi que le param algo
 - Etape 3 : Utiliser hashcat pour cracker le mot de passe en utilisant l'algo spécifié (md5) et le fichier dictionnaire rockyou.txt
   - `hashcat -m 0 -a 0 <hash> dicts/rockyou.txt`
 
@@ -97,7 +99,7 @@ ssh -i key_rsa yvette@10.100.2.4
 ### Niveau 4: Naviguer dans le labyrinthe et trouver la sortie
 
 - Pour trouver la sortie du labyrinthe, il faut se suivre les IPs se terminant par des nombre premiers dans l'ordre croissant
-- Il est possible de trouver ces IPs en analysant le reseau avec nmap, ensuite les fichiers de configuration SSH des différents nœuds du labyrinthe, chaque fichier conntient une restriction d'accès à une IP spécifique
+- Il est possible de trouver ces IPs en analysant le reseau avec nmap, ensuite les fichiers de configuration SSH des différents nœuds du labyrinthe, chaque fichier contient une restriction d'accès à une IP spécifique
 - Voici la liste des IPs à suivre pour trouver la sortie du labyrinthe:
   - 10.100.4.17 (node 0)
   - 10.100.4.23 (node 1)
@@ -136,6 +138,8 @@ En associant ces informations et la note sur la potilitique de mot de passe, on 
 d'Alice Martin est une variation autour de ce voyage à Tokyo en 2019. 
 
 Mot de passe : Tokyo2019!
+
+Il est aussi possible de déduire le mot de passe et se passer de la commande hashcat.
 
 Commande hashcat pour cracker le mot de passe:
 ```bash
@@ -229,9 +233,14 @@ La room se déroule en deux phases :
 **Phase 1**
 
 Une partie des informations sont disséminées dans les fichiers perso de huguette, il faudra comprendre que des infos plus complètes sont
-disponibles dans les fichiers root, et que pour y accéder il faut utiliser sudo cat. (Sudo Misconfig)
+disponibles dans les fichiers root, et que pour y accéder il faut utiliser sudo vim. (Sudo Misconfig)
 Une fois les infos récupérées ( compte utilisateur, clé ssh, séquence de knock, adresse IP), il faudra faire du port knocking
 pour se connecter à la machine suivante.
+
+```bash
+  sudo vim -c ':!/bin/sh'
+```
+
 
 ```bash 
     knock 10.100.8.3 1789 3615 4242 7331 9999
@@ -270,4 +279,18 @@ La commande find permet en mode sudo de copier des fichiers depuis root vers le 
 
 ### Niveau 9: The End
 
-Vous avez triomphé de tous les défis et vous êtes arrivé à la fin du labyrinthe. Félicitations !
+Dans ce niveau il faut reconstruire le dernier flag à partir des différentes parties de clé récupérées dans les niveaux précédents,vous devez etre en posseession de 7 parties de clé.
+Afin de reconstuire le flag vous allez devoir utiliser la commande `ssss-combine` du projet `ssss` (Shamir's Secret Sharing Scheme) qui permet de combiner les différentes parties de clé pour reconstituer le secret final.
+
+```bash
+ssss-combine -t 7 -n 7 -q
+1-2004d30b5bf80c80b70fa660d35236cf036e9a12cb538c381a6ca42531
+2-56be19ce1cb509ba7aed832808c32eaefbc03bcae0e648c80f632df5a2
+3-3f029476da49ed23e7df325728817e34204a56b80da3403d3b5f67dd31
+4-505fd43db1caeefd8413ffd4e6524589643cc706132a9b9443dc3c351a
+5-72944cb22bc3a3478b10409ee2048e1ab72773608b9cf0dcc6d410fe5e
+6-71c9a180f2837390eca626ac3134bef6dea4c911158343204b77c74ffe
+7-33aadef362bd9fb690c880386789e1af027233ffe5fabed372b1a2b5c1
+
+# Output : FLAG{Y0u_c0nqu3r3d_th3_r00ms}
+```
